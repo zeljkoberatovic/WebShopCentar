@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Webshop Centar je sveobuhvatna aplikacija koja omogućava malim i srednjim preduzećima da predstave svoje firme i proizvode, kreiraju    e-commerce prodavnice, upravljaju proizvodima i prodajom, i primaju uplate putem banke. Pored toga, aplikacija uključuje blog sa najnovijim informacijama i vijestima o proizvodima i uslugama dostupnim u prodavnicama, kao i moćne alate za analitiku i marketing. Webshop Centar je osmišljen kao rješenje koje omogućava poslovanje u pokretu i pomaže preduzećima da rastu i unaprijede prodaju.
+Funkcionalnosti
+1. Kreiranje i Upravljanje E-commerce Prodavnicama
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+    Kreiranje Prodavnice: Svaki korisnik može brzo i lako kreirati sopstvenu online prodavnicu unutar Webshop Centra.
+    Dodavanje i Uređivanje Proizvoda: Korisnici mogu dodavati proizvode, postavljati cijene, primjenjivati popuste i ažurirati ponudu.
+    Praćenje i Upravljanje Prodajom: Prodavci mogu pratiti narudžbe, pratiti proces prodaje i analizirati rezultate.
 
-## About Laravel
+2. Finansijsko Upravljanje
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    Integracija sa Bankama: Sigurno primanje uplata direktno preko aplikacije putem integrisanih bankovnih sistema.
+    Praćenje Transakcija: Detaljan pregled izvršenih transakcija, uvid u prihod i status uplata.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. Blog
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    Aktuelne Vijesti i Novosti: Blog sekcija se ažurira sa relevantnim informacijama i vijestima iz zemlje i svijeta, sa naglaskom na proizvode i usluge dostupne u Webshop Centar prodavnicama.
+    Informacije o Trendovima: Blog uključuje sadržaj o tržišnim trendovima, pomažući korisnicima da budu u toku s najnovijim dešavanjima.
 
-## Learning Laravel
+4. Analitika Posjeta i Proizvoda
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    Analitika Posjeta: Korisnici mogu pratiti broj posjeta na svojim prodavnicama, identifikovati izvore saobraćaja i analizirati trendove u posjetama.
+    Najgledaniji i Najtraženiji Proizvodi: Omogućava uvid u najpopularnije proizvode po broju pregleda i narudžbi, što pomaže korisnicima u boljem razumijevanju potražnje i optimizaciji ponude.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Dodatne Funkcionalnosti za Privlačenje Kupaca i Olakšavanje Prodaje
+5. Personalizovana Preporuka Proizvoda
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Sistem Preporuka: Webshop Centar koristi istoriju pregleda i kupovine kako bi posjetiocima preporučio proizvode koji bi ih mogli zanimati, povećavajući angažman i konverzije.
 
-## Laravel Sponsors
+6. Programi Lojalnosti i Kuponi
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    Loyalty Program: Korisnici mogu kreirati programe lojalnosti za nagrađivanje stalnih kupaca bodovima, popustima ili ekskluzivnim ponudama.
+    Kuponi i Kodovi za Popust: Lako kreiranje kupona i promocija za sezonske rasprodaje, čime se privlači više kupaca i povećava prodaja.
 
-### Premium Partners
+7. Višejezička Podrška i Globalna Dostava
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    Višejezička Platforma: Omogućavanje višejezične podrške radi širenja na inostrana tržišta.
+    Integracija sa Dostavnim Uslugama: Povezivanje sa domaćim i međunarodnim dostavnim servisima, omogućavajući praćenje paketa i obračun dostave u realnom vremenu.
 
-## Contributing
+8. Detaljna Analitika Prodaje i Kupaca
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    Segmentacija Kupaca: Analitika omogućava korisnicima da bolje razumiju demografske podatke kupaca, frekvenciju kupovine i prosječnu vrijednost narudžbine.
+    Prodajni Izvještaji i Trendovi: Generisanje izvještaja o najprodavanijim proizvodima, sezonskim trendovima i predviđanje prodaje pomaže u planiranju zaliha i marketinških kampanja.
 
-## Code of Conduct
+9. Marketing Alati i Integracija sa Društvenim Mrežama
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    Alati za Marketing Kampanje: Kreiranje, praćenje i analiza kampanja putem e-mail marketinga i SMS-a.
+    Integracija sa Društvenim Mrežama: Mogućnost dijeljenja proizvoda na društvenim mrežama direktno iz aplikacije, čime se povećava vidljivost i angažman korisnika.
 
-## Security Vulnerabilities
+10. 24/7 Korisnička Podrška i Edukativni Materijali
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    24/7 Podrška za Korisnike: Brza i efikasna podrška putem chat-a, emaila ili telefona.
+    Edukativni Sadržaj i Tutorijali: Tutorijali, vodiči i blog članci dostupni u aplikaciji pomažu korisnicima da što bolje iskoriste sve funkcionalnosti.
 
-## License
+11. Integracija sa Alatima za Upravljanje Skladištem i Zalihama
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    Automatizovano Upravljanje Skladištem: Praćenje zaliha u realnom vremenu, automatske obavijesti za niske zalihe i opcija za upravljanje skladištem.
+    Automatizovana Obnova Zaliha: Automatska nabavka zaliha kada proizvodi padnu ispod određenog nivoa, što smanjuje šanse za rasprodatost.
+
+12. Komentari i Recenzije Kupaca
+
+    Ocjene i Recenzije Proizvoda: Sekcija za komentare i ocjene kupaca omogućava novim posjetiocima da vide mišljenja drugih korisnika, što može povećati povjerenje u proizvode i stimulisati prodaju.
+
+13. Mobilna Aplikacija za Prodavce
+
+    Mobilna Verzija za Upravljanje Prodavnicom: Prodavci mogu pratiti prodaju, upravljati narudžbama i ažurirati proizvode direktno sa mobilnog uređaja.
+
+Zaključak
+
+Webshop Centar nudi sve što je potrebno malim i srednjim preduzećima za uspješno online poslovanje, s mogućnostima za analitiku, marketing i korisničku podršku. Sa fokusom na intuitivno korisničko iskustvo, Webshop Centar pomaže preduzećima da rastu, povećaju angažman kupaca i optimizuju ponudu prema tržišnim trendovima.
