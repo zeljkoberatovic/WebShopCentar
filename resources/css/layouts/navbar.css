@@ -1,0 +1,37 @@
+
+.navbar {
+    background-color: #fff; /* Tamna pozadina navbar-a */
+    padding: 15px 0; /* Dodaj padding za navbar */
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem; 
+    color: #b71b1b; 
+}
+
+.navbar .navbar-toggler {
+    border: 1px solid #f0eeee; /* Bela granica oko hamburger menija */
+}
+
+/* Stil za stavke u navbaru */
+.navbar-nav .nav-item .nav-link {
+    color: #301f06 !important; /* Bela boja za linkove */
+    font-weight: 500; /* Srednje podebljan tekst */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff; /* Plava boja prilikom hover-a */
+    text-decoration: underline; /* Podvlačenje linka pri hover-u */
+}
+
+
+
+/* Responzivnost za manje ekrane */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 0; /* Manji padding na manjim ekranima */
+    }
+    .navbar-nav {
+        text-align: center; /* Centriranje stavki u navbar-u */
+    }
+}

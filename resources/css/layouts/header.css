@@ -1,0 +1,59 @@
+
+/* Header sekcija koja zauzima 100% širine */
+.header-section {
+    width: 100%;
+}
+
+/* Div za Login/Register forme */
+.auth-header {
+    width: 100%;
+    background-color: #dfcfb7; /* svetla pozadina */
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end; /* Poravnava sadržaj na desnu stranu */
+    color: #645452;
+}
+
+/* Flexbox za podešavanje elemenata unutar auth-header */
+.auth-header .auth-links {
+    display: flex;
+    justify-content: space-between; /* Razdvaja linkove */
+    align-items: center;  /* Centriranje linkova po vertikali */
+    gap: 15px;  /* Razmak između linkova */
+}
+
+/* Stil za linkove u auth sekciji */
+.auth-link {
+    text-decoration: none;
+    color: #645452;
+    font-weight: bold;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    color: #007bff;  /* Plava boja pri hoveru */
+}
+
+/* Stil za pozdrav korisniku kada je ulogovan */
+.auth-welcome {
+    font-weight: bold;
+}
+
+/* Responzivnost: Za ekrane manjih dimenzija */
+@media (max-width: 768px) {
+    .auth-header {
+        padding: 5px 10px; /* Manji padding za manje ekrane */
+    }
+
+    .auth-header .auth-links {
+        flex-direction: column;  /* Linkovi se prikazuju vertikalno */
+        align-items: flex-start;  /* Poravnava linkove na levoj strani */
+    }
+
+    .auth-link {
+        font-size: 14px;  /* Manji font na manjim ekranima */
+    }
+}
+
+
+
