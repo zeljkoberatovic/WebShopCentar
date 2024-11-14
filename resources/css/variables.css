@@ -1,0 +1,39 @@
+/* Root nivo - globalne promenljive */
+:root {
+    /* Osnovne boje */
+    --primary-color:#dfcfb7;  /* Pozadina ili primarna boja */
+    --secondary-color: ; /* Sekundarna boja */
+    --accent-color: #; /* Plava boja za hover ili akcije */
+    --text-color: #645452; /* Standardna boja za tekst */
+    --text-light-color: ; /* Boja za svetli tekst */
+    --link-hover-color: #645452; /* Boja linkova pri hover-u */
+
+    /* Fontovi */
+    --font-family: 'Helvetica', 'Arial', sans-serif; /* Glavni font */
+    --font-size-base: 16px; /* Osnovna veličina fonta */
+    --font-size-small: 0.875rem; /* Manji font */
+    --font-size-large: 1.25rem; /* Veći font */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    /* Razmaci i padding */
+    --space-xs: 0.5rem; /* Extra mali razmak */
+    --space-sm: 1rem; /* Mali razmak */
+    --space-md: 1.5rem; /* Srednji razmak */
+    --space-lg: 2rem; /* Veliki razmak */
+
+    /* Sjenke */
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sjena za kutije */
+    --input-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sjena za inpute */
+
+    /* Granice */
+    --border-radius: 0.375rem; /* Zaobljeni ivice */
+    --border-width: 1px; /* Debljina granica */
+    --border-color: #e0e0e0; /* Boja granica */
+    
+    /* Visina i širina */
+    --header-height: 60px; /* Visina header-a */
+    --footer-height: 50px; /* Visina footer-a */
+    
+    
+}

@@ -1,8 +1,8 @@
-
-
 /* Uvoz Bootstrap stilova */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* Uvoz tvojih specifičnih stilova */
 @import './layouts/header.css';
 @import './layouts/navbar.css';
+@import 'variables.css';
+

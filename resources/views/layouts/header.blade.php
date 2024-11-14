@@ -1,5 +1,4 @@
 <header class="header-section">
-
     <div class="header-section__auth">
         <div class="header-section__auth-links">
             @guest
@@ -8,13 +7,13 @@
             @endguest
             
             @auth
-                <span class="auth-welcome">Dobrodosli, {{ Auth::user()->name }}</span>
+                <span class="auth-welcome">Dobrodošli, {{ Auth::user()->name }}</span>
                 <a href="{{ route('logout') }}" 
                    class="auth-link"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                    Logout
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                     @csrf
                 </form>
             @endauth
