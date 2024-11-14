@@ -1,9 +1,15 @@
 
 .navbar {
-    background-color: #fff; /* Tamna pozadina navbar-a */
-    padding: 15px 0; /* Dodaj padding za navbar */
-}
+    background-color: #fff;
+    padding: 15px 0; 
+    margin-right: 20%;
+   
+   
+}    
+.navbar-nav{
+    color: var(--text-color);
 
+}
 .navbar .navbar-brand {
     font-size: 1.5rem; 
     color: #b71b1b; 
@@ -14,22 +20,28 @@
 }
 
 /* Stil za stavke u navbaru */
-.navbar-nav .nav-item .nav-link {
-    color: #301f06 !important; /* Bela boja za linkove */
-    font-weight: 500; /* Srednje podebljan tekst */
+.navbar-nav  .nav-link {
+    color: var(--text-color)!important; 
+    font-weight: 400; 
+    font-size: 22px;
 }
 
 .navbar-nav .nav-item .nav-link:hover {
-    color: #007bff; /* Plava boja prilikom hover-a */
+    color: #0c200f; /* Plava boja prilikom hover-a */
     text-decoration: underline; /* Podvlačenje linka pri hover-u */
 }
 
+ .navbar-collapse{
+    justify-content: end;
+    
+}
 
 
 /* Responzivnost za manje ekrane */
 @media (max-width: 992px) {
     .navbar {
         padding: 10px 0; /* Manji padding na manjim ekranima */
+        margin-right: 1%;
     }
     .navbar-nav {
         text-align: center; /* Centriranje stavki u navbar-u */
