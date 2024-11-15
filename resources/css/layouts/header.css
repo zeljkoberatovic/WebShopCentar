@@ -10,6 +10,7 @@
 /* Linkovi za prijavu i registraciju */
 .header-section__auth-links {
     display: flex;
+    align-items: center; /* Vertikalno poravnanje svih elemenata */
     justify-content: flex-end;
     gap: 1rem;
     margin-right: 6rem;
@@ -26,6 +27,35 @@
     color: #645452;
 }
 
+/* Stil za dropdown za izbor jezika */
+.language-selector {
+    display: flex;
+    align-items: center;
+}
+
+.language-dropdown {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.875rem; /* Manji font za usklađivanje */
+    box-shadow: var(--box-shadow-style);
+        border: 1px solid var(--text-color) ;
+    border-radius: 0.25rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+}
+
+/* Hover i fokus efekti */
+.language-dropdown:hover,
+.language-dropdown:focus {
+    border-color: #645452;
+}
+
+/* Razmak između linkova i dropdown-a */
+.header-section__auth-links .language-selector {
+    margin-left: 1rem;
+}
+
 /* Responzivnost: Za manje ekrane */
 @media (max-width: 768px) {
     .header-section {
@@ -37,7 +67,14 @@
     }
     
     .auth-link {
-        font-size: 0.875rem;
+        font-size: 1rem;
+    }
+
+    .language-dropdown {
+        font-size: 1rem;
+        padding: 0 0.04rem;
+        box-shadow: var(--box-shadow-style);
+        border: 1px solid var(--text-color) ;
     }
 }
 

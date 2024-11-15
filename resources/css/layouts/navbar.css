@@ -3,11 +3,7 @@
     background-color: var(--secondary-color);
     padding: 15px 0;
     width: 100%;
-    box-shadow: 0 4px 2px -2px gray; /* Senka na navbaru */
-}
-
-body {
-    padding-top: 10px; /* Dodajte prostor na vrhu da sadržaj ne bude ispod navbar-a */
+    box-shadow: var(--box-shadow-style);
 }
 
 /* Linkovi unutar navigacione trake */
@@ -19,8 +15,9 @@ body {
 
 /* Stil za brend u navbar-u */
 .navbar .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #2d2a2ad8;
+    padding: 0;
 }
 
 /* Stil za dugme koje prikazuje navigacioni meni na manjim ekranima (hamburger meni) */

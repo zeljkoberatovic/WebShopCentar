@@ -11,6 +11,6 @@
           <a class="nav-link" href="#">O nam</a>
           <a class="nav-link" href="#">Ponuda</a>
           <a class="nav-link" href="#">Blog</a>
-      </div>
+        </div>
   </div>
 </nav>

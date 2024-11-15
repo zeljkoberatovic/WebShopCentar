@@ -11,13 +11,13 @@
 /* Stil za tekstualni sadržaj */
 .hero__content {
     display: flex;
-    flex-direction: column; /* Elementi će biti postavljeni vertikalno (jedan ispod drugog) */
-    justify-content: center; /* Vertikalno centriranje sadržaja */
-    align-items: center; /* Horizontalno centriranje sadržaja */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
     max-width: 50%; 
     padding: 0 3rem;
-    margin: 0 auto; /* Centriranje hero__content unutar roditeljskog elementa */
-    text-align: center; /* Centriranje teksta */
+    margin: 0 auto; 
+    text-align: center; 
 }
 
 .hero__content h1 {
@@ -34,25 +34,32 @@
 
 .hero__button {
     text-decoration: none;
-    background-color: var(--accent-color, #dfcfb7);
+    background-color: var(--secondary-color);
     color: var(--text-color);
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
-    border: 1px solid var(--text-color);
     font-size: 1rem;
     font-weight: 600;
-    display: inline-block; /* Može biti inline-block da bi se ponašao kao dugme */
+    display: inline-block;
+    position: relative;
+    overflow: hidden; 
+    transition: all 0.3s ease; 
+    box-shadow: var(--box-shadow-style); 
 }
 
 .hero__button:hover {
-    background-color: #b8a58c; 
+    background-color: #b8a58c;
     color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    border-color: #b8a58c; 
+    transform: translateY(-4px); /* Lagano pomera dugme ka gore */
+    box-shadow: var(--box-shadow-style);  
 }
 
 /* Stil za div slike */
 .hero__image {
     max-width: 50%; 
-    height: 500px; 
+    height: 400px; 
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -64,9 +71,6 @@
     height: 100%; 
     object-fit: cover; 
 }
-
-
-
 
 /* Responzivnost: Za manje ekrane */
 @media (max-width: 768px) {
@@ -96,16 +100,15 @@
         align-items: center;
         justify-content: space-between; 
         text-align: left; 
-        gap: 2rem; /* Dodajte gap između sadržaja i slike */
     }
 
     .hero__content,
     .hero__image {
-        max-width: 50%; /* Ograničava širinu oba dela */
+        max-width: 50%; 
     }
 
     .hero__content {
-        padding: 0 1.5rem; /* Viši padding za bolju ravnotežu */
+        padding: 0 1.5rem; 
     }
 
     .hero__image img {

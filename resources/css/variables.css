@@ -22,4 +22,7 @@
     --space-md: 1.5rem; /* Srednji razmak */
     --space-lg: 2rem; /* Veliki razmak */
 
+
+    --box-shadow-style: 0 4px 2px -2px gray;
+
 }
