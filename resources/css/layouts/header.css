@@ -12,11 +12,11 @@
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    margin: 0 6rem 0 0;
+    margin-right: 6rem;
     padding: 0.5rem;
 }
 
-/* Stil za pojedinačne linkove */
+/* Stil za linkove */
 .auth-link {
     text-decoration: none;
     color: var(--text-color);
@@ -26,17 +26,7 @@
     color: #645452;
 }
 
-/* Stil za sakrivene elemente */
-.hidden {
-    display: none;
-}
-
-/* Stil za poruku dobrodošlice */
-.auth-welcome {
-    font-weight: bold;
-}
-
-/* Responzivnost: Za ekrane manjih dimenzija */
+/* Responzivnost: Za manje ekrane */
 @media (max-width: 768px) {
     .header-section {
         padding: 0.2rem 0.625rem;
