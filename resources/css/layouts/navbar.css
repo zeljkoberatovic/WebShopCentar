@@ -1,8 +1,7 @@
 /* Stil za navigacionu traku (navbar) */
 .navbar {
-    background-color: #fff;
+    background-color: var(--secondary-color);
     padding: 15px 0;
-    border-bottom: 1px solid var(--text-color);
     width: 100%;
 }
 
@@ -28,14 +27,14 @@
 .navbar-nav .nav-link {
     color: var(--text-color) !important;
     font-weight: 400;
-    font-size: 22px;
-    padding: 0 15px; /* Razmak između linkova */
+    font-size: 1.375rem;
+    padding: 0 15px; 
 }
 
 /* Stil za raspored sadržaja unutar navigacione trake kada se proširi */
 .navbar-collapse {
     justify-content: flex-end;
-    margin-right: 18%; /* Centriranje sadržaja bez dodatnih margina */
+    margin-right: 18%; 
 }
 
 /* Responzivnost za manje ekrane */
@@ -46,8 +45,7 @@
     }
     
     .navbar-nav {
-        flex-direction: column; /* Prikaz stavki u koloni */
-        margin-left: 2%;
+        flex-direction: column;
         
     }
 }

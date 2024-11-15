@@ -9,8 +9,8 @@
 
 /* Stil za tekstualni sadržaj */
 .hero__content {
-    max-width: 50%; /* Prilagodite širinu po potrebi */
-    border: 1px solid red;
+    max-width: 50%; 
+    padding: 0 3rem;
 }
 
 .hero__content h1 {
@@ -28,21 +28,25 @@
 .hero__button {
     text-decoration: none;
     background-color: var(--accent-color, #dfcfb7);
-    color: #fff;
+    color: var(--text-color);
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
+    border: 1px solid var(--text-color);
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
+    margin-top: 1rem;
+    
 }
 
 .hero__button:hover {
-    background-color: #b8a58c; /* Tamnija nijansa akcentne boje */
+    background-color: #b8a58c; 
+    color: #fff;
 }
 
 /* Stil za div slike */
 .hero__image {
-    max-width: 50%; /* Širina div-a */
-    height: 500px; /* Postavljanje fiksne visine */
+    max-width: 50%; 
+    height: 500px; 
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -50,9 +54,9 @@
 }
 
 .hero__image img {
-    width: 100%; /* Slika zauzima punu širinu diva */
-    height: 100%; /* Visina se prilagođava prema divu */
-    object-fit: cover; /* Slika se prilagođava i skraćuje proporcionalno */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
 }
 
 
@@ -67,7 +71,10 @@
 
     .hero__content,
     .hero__image {
-        max-width: 100%; /* Osigurava da oba diva zauzimaju punu širinu */
+        max-width: 100%; 
+    }
+    .hero__content {
+        padding: 5rem;
     }
 
     .hero__image img {
@@ -75,23 +82,27 @@
     }
 }
 
-/* Responzivnost: Za ekrane između 768px i 1000px */
+
 @media (min-width: 768px) and (max-width: 1124px) {
     .hero {
-        flex-direction: row; /* Zadržava horizontalni raspored */
-        align-items: center; /* Vertikalno centriranje sadržaja */
-        justify-content: space-between; /* Raspored sa razmakom između elemenata */
-        text-align: left; /* Poravnanje teksta s leve strane */
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between; 
+        text-align: left; 
     }
 
     .hero__content,
     .hero__image {
-        max-width: 50%; /* Smanjuje širinu svakog dela na 48%, kako bi bio popunjen kontenjer */
+        max-width: 50%;
+    }
+
+    .hero__content {
+        padding: 0 1rem;
     }
 
     .hero__image img {
-        object-fit: cover; /* Održava proporcionalnost slike */
-        margin-top: 0; /* Uklanja dodatni razmak sa vrha slike */
+        object-fit: cover;
+        margin-top: 0; 
     }
 }
 
