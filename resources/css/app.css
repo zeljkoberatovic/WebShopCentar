@@ -5,4 +5,5 @@
 @import './layouts/header.css';
 @import './layouts/navbar.css';
 @import 'variables.css';
+@import './pages/hero.css';
 

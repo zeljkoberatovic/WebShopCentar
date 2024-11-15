@@ -1,49 +1,62 @@
-
+/* Stil za navigacionu traku (navbar) */
 .navbar {
     background-color: #fff;
-    padding: 15px 0; 
-    margin-right: 20%;
-   
-   
-}    
-.navbar-nav{
+    padding: 15px 0;
+    border-bottom: 1px solid var(--text-color);
+    width: 100%;
+}
+
+/* Stil za navigacione stavke (navbar-nav) */
+.navbar-nav {
     color: var(--text-color);
-
+    display: flex;
+     
 }
+
+/* Stil za brend u navigacionoj traci */
 .navbar .navbar-brand {
-    font-size: 1.5rem; 
-    color: #b71b1b; 
+    font-size: 1.5rem;
+    color: #2d2a2ad8;
 }
 
+/* Stil za dugme koje prikazuje navigacioni meni na manjim ekranima (hamburger meni) */
 .navbar .navbar-toggler {
-    border: 1px solid #f0eeee; /* Bela granica oko hamburger menija */
+    border: 1px solid var(--primary-color); /* Bela granica oko hamburger menija */
 }
 
-/* Stil za stavke u navbaru */
-.navbar-nav  .nav-link {
-    color: var(--text-color)!important; 
-    font-weight: 400; 
+/* Stil za linkove unutar navigacione trake */
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 400;
     font-size: 22px;
+    padding: 0 15px; /* Razmak između linkova */
 }
 
-.navbar-nav .nav-item .nav-link:hover {
-    color: #0c200f; /* Plava boja prilikom hover-a */
-    text-decoration: underline; /* Podvlačenje linka pri hover-u */
+/* Stil za raspored sadržaja unutar navigacione trake kada se proširi */
+.navbar-collapse {
+    justify-content: flex-end;
+    margin-right: 18%; /* Centriranje sadržaja bez dodatnih margina */
 }
-
- .navbar-collapse{
-    justify-content: end;
-    
-}
-
 
 /* Responzivnost za manje ekrane */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .navbar {
-        padding: 10px 0; /* Manji padding na manjim ekranima */
+        padding: 10px 0;
         margin-right: 1%;
     }
+    
     .navbar-nav {
-        text-align: center; /* Centriranje stavki u navbar-u */
+        flex-direction: column; /* Prikaz stavki u koloni */
+        margin-left: 2%;
+        
+    }
+}
+
+@media (max-width: 1124px) {
+    .header-section__auth-links {
+        margin-right: 1rem;
+    }
+    .navbar-nav {
+        margin-left: 2%;
     }
 }

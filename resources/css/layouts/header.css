@@ -1,33 +1,37 @@
+/* Glavna sekcija zaglavlja */
 .header-section {
     width: 100%;
-    background-color: var( --primary-color); 
+    background-color: var(--primary-color);
     display: flex;
     justify-content: flex-end;
-    color: var( --text-color);
-}   
+    color: var(--text-color);
+}
 
+/* Linkovi za prijavu i registraciju */
 .header-section__auth-links {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-    margin: 0 1rem 0 0; 
+    margin: 0 6rem 0 0;
     padding: 0.5rem;
 }
 
+/* Stil za pojedinačne linkove */
 .auth-link {
     text-decoration: none;
-    color: #645452;
+    color: var(--text-color);
 }
 
 .auth-link:hover {
-    
-    color: #645452; 
+    color: #645452;
 }
 
+/* Stil za sakrivene elemente */
 .hidden {
     display: none;
 }
 
+/* Stil za poruku dobrodošlice */
 .auth-welcome {
     font-weight: bold;
 }
@@ -35,11 +39,20 @@
 /* Responzivnost: Za ekrane manjih dimenzija */
 @media (max-width: 768px) {
     .header-section {
-        padding: 0.2rem 0.625rem; 
-    }
-
-    .auth-link {
-        font-size: 0.875rem; 
+        padding: 0.2rem 0.625rem;
     }
     
+    .header-section__auth-links {
+        margin-right: 0.5rem;
+    }
+    
+    .auth-link {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 1124px) {
+    .header-section__auth-links {
+        margin-right: 1rem;
+    }
 }
