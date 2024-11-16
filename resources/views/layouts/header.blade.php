@@ -21,10 +21,11 @@
             <!-- Dropdown za izbor jezika -->
             <div class="language-selector">
                 <select id="language" class="language-dropdown">
-                    <option value="en">English</option>
-                    <option value="es">Español</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
+                    <option value="me" selected> Mne </option>
+                    <option value="en"> Eng</option>
+                    <option value="es"> Esp</option>
+                    <option value="fr"> Fra</option>
+                    <option value="ru"> Rus</option>
                 </select>
             </div>
         </div>

@@ -1,0 +1,77 @@
+/* Glavna sekcija za prodavnice */
+.marketplace {
+    background-color: var(--secondary-color);
+    padding: 2rem 0;
+}
+
+.marketplace .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.marketplace-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Grid za prodavnice */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Kartice za prodavnice */
+.store-card {
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow-style);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Slika prodavnice */
+.store-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Ime prodavnice */
+.store-name {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin: 1rem;
+    text-align: center;
+}
+
+/* Opis prodavnice */
+.store-description {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0 1rem 1rem;
+    text-align: center;
+}
+
+/* Responzivnost */
+@media (max-width: 768px) {
+    .store-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .store-name {
+        font-size: 1rem;
+    }
+
+    .store-description {
+        font-size: 0.75rem;
+    }
+}

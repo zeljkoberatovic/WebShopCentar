@@ -19,6 +19,9 @@
         <!-- Bootstrap JS (Ovo je odgovorno za sve funkcionalnosti kao što su hamburger meni, modali, dropdown meniji) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.7/css/flag-icon.min.css">
+
+
 
         <!-- Meta tagovi za SEO -->
         <meta name="description" content="Create and manage your own online store with ease. Our platform offers customizable           templates, secure payment options, and seamless integration for your e-commerce needs.">

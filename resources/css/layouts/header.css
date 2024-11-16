@@ -37,7 +37,7 @@
     padding: 0.3rem 0.5rem;
     font-size: 0.875rem; /* Manji font za usklađivanje */
     box-shadow: var(--box-shadow-style);
-        border: 1px solid var(--text-color) ;
+    border: 1px solid var(--text-color) ;
     border-radius: 0.25rem;
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -48,8 +48,12 @@
 /* Hover i fokus efekti */
 .language-dropdown:hover,
 .language-dropdown:focus {
-    border-color: #645452;
+    background-color: #f0f0f0; /* Svetlosiva pozadina */
+    color: var(--text-color); /* Koristi boju teksta definisanu u temi */
+    border-color: #ccc; /* Svetlosiva granica */
+    outline: none; /* Uklanja standardni fokus okvir */
 }
+
 
 /* Razmak između linkova i dropdown-a */
 .header-section__auth-links .language-selector {

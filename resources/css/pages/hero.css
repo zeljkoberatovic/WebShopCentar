@@ -59,7 +59,7 @@
 /* Stil za div slike */
 .hero__image {
     max-width: 50%; 
-    height: 400px; 
+    height: auto; 
     display: flex;
     align-items: center; 
     justify-content: center; 
