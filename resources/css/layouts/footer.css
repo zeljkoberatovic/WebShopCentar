@@ -1,0 +1,107 @@
+/* Footer osnovni stil */
+.site-footer {
+    background-color: #333;
+    color: #f8f9fa;
+    padding: 3rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Kontejner za centriranje */
+.site-footer .container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+/* Gornji deo footera */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+/* Stilizacija sekcija (Navigacija, Kontakt, Društvene mreže) */
+.footer-top div {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Naslovi sekcija */
+.footer-top h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Navigacija i liste */
+.footer-top ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-top ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-top ul li a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-top ul li a:hover {
+    color: #8c6e63;
+}
+
+/* Kontakt informacije */
+.footer-contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Društvene mreže */
+.footer-social ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-social ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Ikonice društvenih mreža */
+.footer-social i {
+    font-size: 1.25rem;
+    color: #8c6e63;
+    transition: color 0.3s ease;
+}
+
+.footer-social i:hover {
+    color: #ffffff;
+}
+
+/* Donji deo footera */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+/* Responsive dizajn */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-top div {
+        min-width: 100%;
+    }
+}

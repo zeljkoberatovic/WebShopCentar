@@ -2,12 +2,14 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 /* Uvoz tvojih specifičnih stilova */
-@import './layouts/header.css';
-@import './layouts/navbar.css';
 @import 'variables.css';
 @import 'custom.css';
+@import './layouts/header.css';
+@import './layouts/navbar.css';
+@import './layouts/footer.css';
 @import './pages/home/hero.css';
 @import './pages/home/marketplace.css';
 @import './pages/home/vision-mission.css';
 @import './pages/home/latest-news.css';
 @import './pages/home/newsletter.css';
+
