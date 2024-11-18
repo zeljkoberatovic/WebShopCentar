@@ -5,7 +5,7 @@
 @import './layouts/header.css';
 @import './layouts/navbar.css';
 @import 'variables.css';
-@import './pages/hero.css';
 @import 'custom.css';
-@import './pages/marketplace.css';
-
+@import './pages/home/hero.css';
+@import './pages/home/marketplace.css';
+@import './pages/home/vision-mission.css';

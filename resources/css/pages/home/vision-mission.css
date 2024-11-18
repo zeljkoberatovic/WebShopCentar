@@ -1,0 +1,56 @@
+.vision-mission {
+    padding: 3rem 1rem;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+.vision-mission h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.mission, .vision {
+    margin-bottom: 2rem;
+}
+
+.mission h3, .vision h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.values {
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.cta .btn-primary {
+    color: #fff; 
+    background-color: #8c6e63; 
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.cta .btn-primary:hover {
+    background-color: var(--primary-color); 
+    color: var(--text-color);
+}
