@@ -114,6 +114,34 @@
     </div>
 </section>
 
+<section class="latest-news">
+    <div class="container">
+        <h2>Latest News</h2>
+        <div class="news-feature">
+            <img src="latest-news-image.jpg" alt="Latest News" class="news-image">
+            <div class="news-content">
+                <h3>Uzbudljivo ažuriranje na našoj platformi</h3>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a erat nec...</p>
+
+                <a href="/blog/latest-post" class="btn-primary">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="newsletter">
+    <div class="container">
+        <h2>Budite u toku!</h2>
+        <p>Pretplatite se na naš newsletter i primajte najnovije vesti, ažuriranja i ekskluzivne ponude.</p>
+
+        <form action="/subscribe" method="post" class="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+
 
 
 

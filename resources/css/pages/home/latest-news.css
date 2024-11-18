@@ -1,0 +1,49 @@
+.latest-news {
+    padding: 3rem 1rem;
+    background-color: #d3a376;
+    text-align: center;
+}
+
+.news-feature {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.news-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.news-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.news-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.news-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #8c6e63;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
