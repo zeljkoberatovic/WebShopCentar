@@ -59,6 +59,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    word-wrap: break-word;
 }
 
 /* Društvene mreže */
@@ -94,7 +95,7 @@
     color: #ccc;
 }
 
-/* Responsive dizajn */
+/* Responsive dizajn za male ekrane */
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;
@@ -102,6 +103,36 @@
     }
 
     .footer-top div {
-        min-width: 100%;
+        flex: none;
+        width: 100%;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #444;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-top div:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+}
+
+/* Responsive dizajn za vrlo male ekrane */
+@media (max-width: 480px) {
+    .footer-top ul li {
+        margin-bottom: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .footer-social ul li a {
+        font-size: 0.9rem;
+    }
+
+    .footer-contact ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-contact ul li i {
+        margin-bottom: 0.5rem;
     }
 }

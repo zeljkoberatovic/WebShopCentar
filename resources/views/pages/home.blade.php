@@ -80,6 +80,26 @@
                 <h3 class="store-name">Prodavnica 3</h3>
                 <p class="store-description">Kupujte sa stilom!</p>
             </div>
+            <div class="store-card">
+                <img src="store1.jpg" alt="Prodavnica 1" class="store-image">
+                <h3 class="store-name">Prodavnica 1</h3>
+                <p class="store-description">Najbolji izbor za vas!</p>
+            </div>
+            <div class="store-card">
+                <img src="store1.jpg" alt="Prodavnica 1" class="store-image">
+                <h3 class="store-name">Prodavnica 1</h3>
+                <p class="store-description">Najbolji izbor za vas!</p>
+            </div>
+            <div class="store-card">
+                <img src="store1.jpg" alt="Prodavnica 1" class="store-image">
+                <h3 class="store-name">Prodavnica 1</h3>
+                <p class="store-description">Najbolji izbor za vas!</p>
+            </div>
+            <div class="store-card">
+                <img src="store1.jpg" alt="Prodavnica 1" class="store-image">
+                <h3 class="store-name">Prodavnica 1</h3>
+                <p class="store-description">Najbolji izbor za vas!</p>
+            </div>
             <!-- Dodajte još prodavnica ovde -->
         </div>
     </div>
