@@ -1,6 +1,6 @@
 .newsletter {
     padding: 3rem 1rem;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

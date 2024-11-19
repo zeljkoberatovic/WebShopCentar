@@ -138,16 +138,24 @@
     <div class="container">
         <h2>Latest News</h2>
         <div class="news-feature">
-            <img src="latest-news-image.jpg" alt="Latest News" class="news-image">
+            <!-- Picture element za prilagodljive slike -->
+            <picture>
+                <source srcset="{{ asset('images/road.webp') }}" type="image/webp">
+                <img 
+                    src="{{ asset('images/road.jpg') }}" 
+                    alt="Opis slike" 
+                    class="news-image">
+            </picture>
+            <!-- Tekstualni sadržaj vijesti -->
             <div class="news-content">
                 <h3>Uzbudljivo ažuriranje na našoj platformi</h3>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a erat nec...</p>
-
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium laboriosam natus asperiores officia. Aliquam, debitis voluptatem dolorem ducimus quidem officiis tempora deserunt ea quisquam molestias maxime natus corrupti molestiae fugiat adipisci illum cumque accusamus? Vel omnis earum animi dicta!</p>
                 <a href="/blog/latest-post" class="btn-primary">Read More</a>
             </div>
         </div>
     </div>
 </section>
+
 
 <section class="newsletter">
     <div class="container">

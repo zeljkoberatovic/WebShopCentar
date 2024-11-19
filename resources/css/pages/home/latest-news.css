@@ -1,16 +1,17 @@
 .latest-news {
     padding: 3rem 1rem;
-    background-color: #d3a376;
+    background-color: #DCDCD2;
     text-align: center;
 }
 
 .news-feature {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 1.5rem;
     margin-top: 1.5rem;
+    text-align: left;
 }
 
 .news-image {
@@ -21,8 +22,8 @@
 }
 
 .news-content {
+    flex: 1;
     max-width: 600px;
-    text-align: left;
 }
 
 .news-content h3 {
@@ -46,4 +47,18 @@
 
 .btn-primary:hover {
     background-color: #333;
+}
+
+/* Raspored slike lijevo i teksta desno na većim ekranima */
+@media (min-width: 768px) {
+    .news-feature {
+        flex-direction: row;
+    }
+}
+
+/* Na manjim ekranima tekst ide ispod slike */
+@media (max-width: 767px) {
+    .news-feature {
+        flex-direction: column;
+    }
 }
