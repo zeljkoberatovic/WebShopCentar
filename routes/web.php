@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::view('/', 'pages.home')->name('pages.home');
+
+
+

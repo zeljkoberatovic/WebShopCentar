@@ -3,6 +3,8 @@
     background-color: var(--primary-color);
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 2.3rem 3rem;
+    
 }
 
 .newsletter h2 {
@@ -43,4 +45,12 @@
 
 .newsletter-form button:hover {
     background-color: #333;
+}
+
+@media (max-width: 768px) {
+
+    .newsletter {
+        margin: 1rem;
+    }
+
 }
