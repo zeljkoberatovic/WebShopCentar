@@ -1,0 +1,79 @@
+/* Glavni container sa paddingom */
+.container {
+    padding: 50px 0;
+    margin: 0;
+}
+
+/* Flex container za kartice */
+.store-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Manji razmak između kartica */
+    justify-content: space-between;
+    width: 100%; /* Osigurava da container zauzima celu širinu */
+}
+
+/* Stil za pojedinačnu karticu (desktop) */
+.store-card {
+    flex: 1 1 calc(20% - 20px); /* cetiri kartice u redu sa razmakom */
+    max-width: calc(20% - 20px); /* Razmak između kartica */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Ako je ekran manji (tablet - max 1024px), četiri kartice u redu */
+@media (max-width: 1024px) {
+    .store-card {
+        flex: 1 1 calc(25% - 20px); /* Četiri kartice u redu sa manjim razmakom */
+        max-width: calc(25% - 20px); /* Razmak između kartica */
+    }
+}
+
+/* Ako je ekran još manji (mobilni uređaji - max 768px) */
+@media (max-width: 768px) {
+    .store-card {
+        flex: 1 1 calc(48% - 1%); /* Dve kartice koje zauzimaju 98% širine ekrana sa 1% razmakom */
+        max-width: calc(48% - 1%); /* Obezbeđuje da kartice zauzimaju 48% širine sa razmakom između */
+        margin-bottom: 15px; /* Razmak između redova kartica */
+    }
+}
+
+
+
+/* Hover efekat na kartici */
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizacija naslova */
+.store-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Opis sa kraćim tekstom, sa skraćivanjem (text-truncate) */
+.store-card .card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Efekat za dugme */
+.store-card .btn {
+    transition: background-color 0.3s ease;
+}
+
+/* Hover efekat na dugme */
+.store-card .btn:hover {
+    background-color: #0056b3; /* Tamnija boja pri hoveru */
+    border-color: #0056b3;
+}
+
+/* Dodavanje margina i paddinga između redova i kartica */
+.card-body {
+    padding: 20px;
+}
