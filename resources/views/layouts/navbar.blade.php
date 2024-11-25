@@ -9,8 +9,8 @@
           <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Pocetna</a>
           <a class="nav-link" href="{{ route('stores.index')}}">Prodavnice</a>
           <a class="nav-link" href="{{ route('offers') }}">Ponuda</a>
-          <a class="nav-link" href="#">O nam</a>
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="{{ route('blog.index')}}">Blog</a>
+          <a class="nav-link" href="#">O nama</a>
         </div>
   </div>
 </nav>
