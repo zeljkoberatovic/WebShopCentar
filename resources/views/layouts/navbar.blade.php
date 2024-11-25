@@ -8,8 +8,8 @@
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="#">Pocetna</a>
           <a class="nav-link" href="#">Prodavnice</a>
-          <a class="nav-link" href="#">O nam</a>
           <a class="nav-link" href="#">Ponuda</a>
+          <a class="nav-link" href="#">O nam</a>
           <a class="nav-link" href="#">Blog</a>
         </div>
   </div>
