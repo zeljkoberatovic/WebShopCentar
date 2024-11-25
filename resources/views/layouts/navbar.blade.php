@@ -10,7 +10,7 @@
           <a class="nav-link" href="{{ route('stores.index')}}">Prodavnice</a>
           <a class="nav-link" href="{{ route('offers') }}">Ponuda</a>
           <a class="nav-link" href="{{ route('blog.index')}}">Blog</a>
-          <a class="nav-link" href="#">O nama</a>
+          <a class="nav-link" href="{{ route('about_us')}}">O nama</a>
         </div>
   </div>
 </nav>
