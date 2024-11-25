@@ -1,14 +1,14 @@
 /* Osnovna podešavanja za html i body */
 html, body {
-    height: 100%; /* Osigurava da stranica zauzme celu visinu ekrana */
-    margin: 0; /* Uklanja podrazumevane margine */
-    padding: 0; /* Uklanja podrazumevani padding */
-    font-family: 'Arial', sans-serif; /* Postavlja osnovni font */
-    font-size: 16px; /* Osnovna veličina fonta */
-    line-height: 1.5; /* Podešava razmak između linija */
-    color: #333; /* Osnovna boja teksta */
-    background-color: #fff; /* Postavljanje pozadine stranice */
-    box-sizing: border-box; /* Osigurava da margin i padding ne utiču na širinu i visinu elemenata */
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: #333; 
+    background-color: #fff; 
+    box-sizing: border-box; 
     overflow-x: hidden; /* Sprečava horizontalni skroling */
 }
 
@@ -19,21 +19,26 @@ html, body {
 
 /* Linkovi: Uklanja podrazumevane stilove */
 a {
-    text-decoration: none; /* Uklanja podvučene linkove */
+    text-decoration: none; 
     color: inherit; /* Nasleđuje boju teksta */
 }
 
-/* Podesavanja za respozivnost (ako koristiš rem kao jedinicu) */
+/* Podesavanja za respozivnost  */
 @media (max-width: 768px) {
     html {
         font-size: 14px; /* Smanjenje osnovne veličine fonta na manjim ekranima */
     }
 }
+@media (max-width:1024px) {
+    html {
+        font-size: 15px;
+    }
+}
 
 /* Resetovanje stilova za slike */
 img {
-    max-width: 100%; /* Slike se prilagođavaju širini roditeljskog elementa */
-    height: auto; /* Održavanje proporcija slika */
+    max-width: 100%;
+    height: auto; 
 }
 
 /* Resetovanje stilova za tabele */
@@ -44,7 +49,7 @@ table {
 
 /* Resetovanje stilova za liste */
 ul, ol {
-    list-style: none; /* Uklanja brojeve i oznake sa lista */
+    list-style: none; 
     padding: 0;
     margin: 0;
 }

@@ -1,7 +1,7 @@
 /* Uvoz Bootstrap stilova */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-/* Uvoz tvojih specifičnih stilova */
+
 @import 'variables.css';
 @import 'custom.css';
 @import './layouts/header.css';
@@ -12,4 +12,10 @@
 @import './pages/home/vision-mission.css';
 @import './pages/home/latest-news.css';
 @import './pages/home/newsletter.css';
+@import './pages/about_us/about_us-page.css';
+@import './pages/blog/blog-page.css';
+@import './pages/offers/offers-page.css';
+@import './pages/stores/stores-page.css';
+
+
 
