@@ -7,7 +7,7 @@
         @foreach ($stores as $store)
             <div class="store-card">
                 <div class="card shadow-sm h-100">
-                    <img src="{{ $store->image }}" class="card-img-top" alt="{{ $store->name }}" style="object-fit: cover">
+                    <img src="{{ $store->image }}" class="card-img-top" alt="{{ $store->name }}">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ $store->name }}</h5>
                         <p class="card-text text-truncate" title="{{ $store->description }}">{{ $store->description }}</p>

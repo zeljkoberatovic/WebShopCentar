@@ -1,7 +1,7 @@
+
 /* Glavni container sa paddingom */
 .container {
-    padding: 50px 0;
-    margin: 0;
+    padding: 50px;
 }
 
 /* Flex container za kartice */
@@ -10,37 +10,58 @@
     flex-wrap: wrap;
     gap: 15px; /* Manji razmak između kartica */
     justify-content: space-between;
-    width: 100%; /* Osigurava da container zauzima celu širinu */
+    width: 100%;
 }
 
-/* Stil za pojedinačnu karticu (desktop) */
+/* Stil za pojedinačnu karticu */
 .store-card {
-    flex: 1 1 calc(20% - 20px); /* cetiri kartice u redu sa razmakom */
-    max-width: calc(20% - 20px); /* Razmak između kartica */
+    flex: 1 1 calc(20% - 15px); /* Četiri kartice u redu sa razmakom na desktopu */
+    max-width: calc(20% - 5px); /* Razmak između kartica */
     margin-bottom: 30px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     border-radius: 10px;
     overflow: hidden;
 }
 
-/* Ako je ekran manji (tablet - max 1024px), četiri kartice u redu */
+/* Ako je ekran manji (tablet - max 1024px), tri kartice u redu */
 @media (max-width: 1024px) {
     .store-card {
-        flex: 1 1 calc(25% - 20px); /* Četiri kartice u redu sa manjim razmakom */
-        max-width: calc(25% - 20px); /* Razmak između kartica */
+        flex: 1 1 calc(25% - 5px); /* 4 kartice u redu sa manjim razmakom */
+        max-width: calc(25% - 5px); /* Razmak između kartica */
+    }
+    .store-flex-container {
+        gap: 5px;
+    }
+    .container-md {
+        max-width: 100%;
     }
 }
 
-/* Ako je ekran još manji (mobilni uređaji - max 768px) */
-@media (max-width: 768px) {
+/* Ako je ekran još manji (mobilni uređaji - max 768px), dve kartice u redu */
+@media (min-width: 480px) and (max-width: 768px) {
+    
+
+     .container, .container-sm {
+        max-width: 100%;
+        margin: 0;
+        
+    }
+
     .store-card {
-        flex: 1 1 calc(48% - 1%); /* Dve kartice koje zauzimaju 98% širine ekrana sa 1% razmakom */
-        max-width: calc(48% - 1%); /* Obezbeđuje da kartice zauzimaju 48% širine sa razmakom između */
+        flex: 1 1 calc(48% - 1%); /* 2 kartice u redu sa 1% razmakom */
+        max-width: calc(48% - 1%); /* Kartice zauzimaju 48% širine, sa 1% razmakom između */
         margin-bottom: 15px; /* Razmak između redova kartica */
     }
 }
 
 
+/* Ako je ekran još manji (ispod 480px) */
+@media (max-width: 480px) {
+    .store-card {
+        flex: 1 1 calc(98% - 1%); /* Jedna kartica koja zauzima 98% širine sa razmakom između */
+        max-width: calc(98% - 1%); /* Zauzima 98% širine ekrana */
+    }
+}
 
 /* Hover efekat na kartici */
 .store-card:hover {
