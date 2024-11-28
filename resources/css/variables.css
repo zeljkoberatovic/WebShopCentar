@@ -3,7 +3,7 @@
     /* Osnovne boje */
     --primary-color:#dfcfb7;  /* Pozadina ili primarna boja */
     --secondary-color: #fff; /* Sekundarna boja */
-    --accent-color: #; /* Plava boja za hover ili akcije */
+    --accent-color: #; 
     --text-color: #645452; /* Standardna boja za tekst */
     --text-light-color: ; /* Boja za svetli tekst */
     --link-hover-color: #645452; /* Boja linkova pri hover-u */

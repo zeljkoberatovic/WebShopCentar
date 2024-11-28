@@ -1,12 +1,21 @@
 /* Glavni container sa paddingom */
-.container {
-    padding: 20px; 
+.container { 
     width: 100%;
+    margin: 5rem;
 }
  .container-fluid {
         margin: 0;
         padding: 0;
     }
+ .text-center {
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: start;
+    border-bottom: 1px solid var(--text-color);
+    box-shadow: var(--box-shadow-style);
+    padding-bottom: 10px;
+ }   
+ 
 
 /* Flex container za kartice */
 .store-flex-container {
@@ -14,8 +23,8 @@
     flex-wrap: wrap;
     gap: 15px;
     justify-content: space-between;
-    margin-left: -15px;  
-    margin-right: -15px; 
+     
+    margin-top: 3rem;
 }
 
 /* Stil za pojedinačnu karticu */
