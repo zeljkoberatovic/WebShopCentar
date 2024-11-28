@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase; // Koristi se za resetovanje baze između testova
+    //use RefreshDatabase; // Koristi se za resetovanje baze između testova
 
     /** @test */
     public function user_can_be_created():void
