@@ -15,8 +15,8 @@
 
 /* Stil za brend u navbar-u */
 .navbar .navbar-brand {
-    font-size: 1.8rem;
-    color: #2d2a2ad8;
+    font-size: 2rem;
+    color: var(--text-color);
     padding: 0;
 }
 

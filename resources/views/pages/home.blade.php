@@ -19,7 +19,7 @@
 </section>
 
 
-<section class="home">
+<section class="marketplace">
     <div class="container">
         <h1 class="text-center mb-5">Istaknute Prodavnice</h1>
         <div class="store-flex-container">
@@ -37,7 +37,7 @@
                 </div>
             @endforeach
         </div>
-    
+
         @if ($stores->count() >= 10)
             <div class="text-center mt-4">
                 <a href="{{ route('stores') }}" class="btn btn-outline-primary">Pogledaj sve prodavnice</a>
@@ -45,6 +45,7 @@
         @endif
     </div>
 </section>
+
 
 <section class="vision-mission">
     <div class="container">
@@ -68,7 +69,7 @@
         </div>
         
         <div class="cta">
-            <a href="/register" class="btn-primary">Pogledajte nasu ponudu</a>
+            <a href="{{ route('offers') }}" class="btn-primary">Pogledajte nasu ponudu</a>
         </div>
     </div>
 </section>

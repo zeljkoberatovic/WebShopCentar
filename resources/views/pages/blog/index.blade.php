@@ -13,7 +13,7 @@
                 <div class="row">
                     <!-- Prva vijest -->
                     <div class="col-lg-6 col-md-6">
-                        <div class="blog-card ">
+                        <div class="blog-card">
                             <div class="blog-card-image ">
                                 <a href="#"><img src="images/road.webp" class="img-fluid" alt="Vijest 1"></a>
                             </div>

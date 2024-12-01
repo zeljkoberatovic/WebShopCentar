@@ -1,119 +1,14 @@
-/* Glavna sekcija za prodavnice */
-.marketplace {
-    background-color: #DCDCD2;
-    padding: 2rem 0;
+.home > .container {
+   padding: 5px;
+   border: 1px solid var(--primary-color);
 }
 
-.marketplace .container {
-    width: min(90%, 1200px); 
-    margin: 0 auto;
-    padding: 3rem 0;
+.store-flex-container{
+    gap:0;
 }
-
-.marketplace-title {
-    text-align: start;
-    font-size: 2.5rem;
-    color: var(--text-color, #333); 
-    margin: 0 0 5rem 3rem;
-    border-bottom: 1px solid var(--text-color);
-    box-shadow: var(--box-shadow-style, 0 4px 8px rgba(0, 0, 0, 0.1)); 
-    width: 90%;
-}
-
-/* Grid za prodavnice */
-.store-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 1.5rem;
-    width: 100%;
-}
-
-/* Kartice za prodavnice */
-.store-card {
-    background-color: #fff !important; /* Dodaj !important ako stil ne radi */
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow-style, 1px 4px 8px rgba(0, 0, 0, 0.1)); 
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.store-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Slika prodavnice */
-.store-image {
-    width: 100%;
-    aspect-ratio: 16 / 9; 
-    object-fit: cover;
-}
-
-/* Ime prodavnice */
-.store-name {
-    font-size: 1.25rem;
-    color: var(--primary-color, #333); 
-    margin: 1rem;
-    text-align: center;
-}
-
-/* Opis prodavnice */
-.store-description {
-    font-size: 0.875rem;
-    color: #555;
-    margin: 0 1rem 1rem;
-    text-align: center;
-}
-
-.test-button {
-    display: block;
-    margin: 2rem auto; 
-    padding: 0.75rem 1.5rem; 
-    font-size: 1rem; 
-    color: #fff; 
-    background-color: #8c6e63; 
-    border: none; 
-    border-radius: 0.5rem; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-
-.test-button:hover {
-    background-color: var(--primary-color); 
-    color: var(--text-color);
-}
-
-
-
-
-/* Responzivnost za ekran do 768px */
 @media (max-width: 768px) {
-    .marketplace .container {
-        width: 100%; 
-        padding: 0 1rem; 
-    }
-
-    .store-grid {
-        grid-template-columns: repeat(4, 1fr); /* Četiri kartice u liniji */
-        gap: 1rem;
-        max-width: 100%; 
-    }
-
-    .store-name {
-        font-size: 1rem;
-    }
-
-    .store-description {
-        font-size: 0.75rem;
-    }
-
-
-/* Dodatni stilovi za vrlo uske ekrane (320px i manje) */
-@media (max-width: 320px) {
-    .store-grid {
-        grid-template-columns: repeat(2, 1fr); /* Dve kartice po liniji za vrlo male ekrane */
-    }
+.store-flex-container{
+    justify-content: flex-start;
 }
-
+   
 }
