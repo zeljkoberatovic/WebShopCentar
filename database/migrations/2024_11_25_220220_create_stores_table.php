@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('location'); // Lokacija prodavnice
             $table->text('description')->nullable(); // Opis prodavnice
             $table->string('image')->nullable(); // URL slike prodavnice
+
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             
             $table->timestamps();
         });
