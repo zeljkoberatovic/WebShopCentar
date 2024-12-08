@@ -13,6 +13,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
 
+use Laravel\Fortify\Contracts\LoginViewResponse;
+use Laravel\Fortify\Contracts\LoginViewResponse as LoginViewResponseContract;
+
 class FortifyServiceProvider extends ServiceProvider
 {
     
@@ -44,6 +47,8 @@ class FortifyServiceProvider extends ServiceProvider
         return view('auth.register'); // Pogled za registraciju
     });
 
+
+    
     Fortify::requestPasswordResetLinkView(function () {
         return view('auth.passwords.email'); // Pogled za zahtev za reset lozinke
     });
@@ -56,4 +61,7 @@ class FortifyServiceProvider extends ServiceProvider
         return view('auth.verify-email'); // Pogled za verifikaciju emaila
     });
   }
+
+  
+ 
 }

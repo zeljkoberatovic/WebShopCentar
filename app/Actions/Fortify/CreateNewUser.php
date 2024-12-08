@@ -37,4 +37,19 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
     }
+
+    public function passwordRules()
+{
+    return [
+        'required',
+        'string',
+        'min:8', // Minimum 8 karaktera
+        'regex:/[a-z]/', // Bar jedno malo slovo
+        'regex:/[A-Z]/', // Bar jedno veliko slovo
+        'regex:/[0-9]/', // Bar jedan broj
+        'regex:/[@$!%*?&]/', // Bar jedan specijalni karakter
+        'confirmed',
+    ];
+}
+
 }
