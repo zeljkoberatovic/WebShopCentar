@@ -32,17 +32,7 @@ class User extends Authenticatable
         ];
     }
 
-    // Provera da li je korisnik administrator
-    public function isAdmin()
-    {
-        return $this->role === 'admin';
-    }
-
-    // Provera da li je korisnik obični korisnik (user)
-    public function isUser()
-    {
-        return $this->role === 'user';
-    }
+    
 
     public function store()
 {

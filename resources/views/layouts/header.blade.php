@@ -2,8 +2,8 @@
     <div class="header-section__auth">
         <div class="header-section__auth-links">
             @guest
-                <a href="#" class="auth-link">Prijava</a>
-                <a href="#" class="auth-link">Registracija</a>
+                <a href="{{ route('login')}}" class="auth-link">Prijava</a>
+                <a href="{{ route('register')}}" class="auth-link">Registracija</a>
             @endguest
 
             @auth
