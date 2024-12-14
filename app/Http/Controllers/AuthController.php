@@ -31,10 +31,10 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role' => 'customer', // Dodaj role ako je potrebno
+            'role' => 'customer', // = ako je potrebno
         ]);
 
-        // Prijavi korisnika automatski nakon registracije
+        // Prijava korisnika automacki nakon prijave
         Auth::login($user);
 
         // Preusmeri na homepage ili neku drugu stranicu

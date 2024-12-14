@@ -14,11 +14,11 @@ class TwoFactorAuthenticationController extends Controller
      {
          $user = $request->user();
  
-         // Generiši i sačuvaj tajni ključ i obnovljive kodove
+         // Generiše i čuva tajni ključ i obnovljive kodove
          $user->forceFill([
             'two_factor_secret' => encrypt($provider->generateSecretKey()),
             'two_factor_recovery_codes' => encrypt(json_encode(collect()->times(8, function () {
-                return Str::random(10) . '-' . Str::random(10); // Zamenjeno sa Str::random()
+                return Str::random(10) . '-' . Str::random(10);
             })->toArray())),
         ])->save();
  
