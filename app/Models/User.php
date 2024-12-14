@@ -11,11 +11,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     // Atributi koji se mogu masovno dodeljivati
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $fillable = ['name', 'email', 'password', 'role'];
 
     // Atributi koji treba da budu sakriveni prilikom serijalizacije
     protected $hidden = [

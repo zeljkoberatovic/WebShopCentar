@@ -22,31 +22,24 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Konfiguracije za Fortify akcije
-        Fortify::createUsersUsing(CreateNewUser::class);
-        Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+       // Akcije za registraciju, reset lozinke, itd.
+       Fortify::createUsersUsing(CreateNewUser::class);
+       Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
+       Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
+       Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
-        // Rate Limiting za prijavu i two-factor autentifikaciju
-        RateLimiter::for('login', function (Request $request) {
-            $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
+       // Prilagođeni prikazi
+       Fortify::loginView(fn () => view('auth.login'));
+       Fortify::registerView(fn () => view('auth.register'));
+       Fortify::requestPasswordResetLinkView(fn () => view('auth.forgot-password'));
+       Fortify::resetPasswordView(fn ($request) => view('auth.reset-password', ['request' => $request]));
 
-            return Limit::perMinute(5)->by($throttleKey);
-        });
-
-        RateLimiter::for('two-factor', function (Request $request) {
-            return Limit::perMinute(5)->by($request->session()->get('login.id'));
-        });
-
+       // Rate limiting
+       RateLimiter::for('login', function (Request $request) {
+           $email = (string) $request->email;
+           return Limit::perMinute(5)->by($email . $request->ip());
+       });
+   }
         
-        
-        Fortify::loginView(function () {
-            return view('auth.login');
-        });
-
-        Fortify::registerView(function() {
-            return view('auth.register');
-        });
-    }
 }
+
