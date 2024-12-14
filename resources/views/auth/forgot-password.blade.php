@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- resources/views/auth/forgot-password.blade.php -->
+
 
 <form method="POST" action="{{ route('password.email') }}">
     @csrf

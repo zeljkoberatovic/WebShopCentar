@@ -1,0 +1,7 @@
+za testiranje 
+use Illuminate\Support\Facades\Mail;
+
+Mail::raw('This is a test email.', function ($message) {
+    $message->to('zeljkoberatovic084@gmail.com')
+            ->subject('Test Email');
+});
