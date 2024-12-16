@@ -1,4 +1,4 @@
-za testiranje 
+
 use Illuminate\Support\Facades\Mail;
 
 Mail::raw('This is a test email.', function ($message) {

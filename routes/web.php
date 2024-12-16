@@ -14,6 +14,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\TwoFactorAuthenticationController;
 
+
+
+
 // Rute za prijavu, registraciju, logout
 Route::get('/login', function () { return view('auth.login'); })->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -46,16 +49,17 @@ Route::middleware(['auth'])->group(function () {
 // Ruta za home stranu
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-
 // Ruta za prodavnice
 Route::get('/stores', [StoreController::class, 'stores'])->name('stores');
+
+// Blog kontroler
+Route::resource('blog', BlogController::class);
 
 // Ostale statičke stranice
 Route::view('/offers', 'pages.offers')->name('offers');
 Route::view('/about_us', 'pages.about_us')->name('about_us');
 
-// Blog kontroler
-Route::resource('blog', BlogController::class);
+
 
 
 
