@@ -7,12 +7,13 @@ use App\Http\Controllers\Web\BlogController;
 
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
-use Laravel\Fortify\Features;
 
+use Laravel\Fortify\Features;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PasswordResetController;
-use App\Http\Controllers\TwoFactorAuthenticationController;
+
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\PasswordResetController;
+use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
 
 
