@@ -31,7 +31,7 @@ class AuthController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role' => 'customer', // = ako je potrebno
+            'role' => 'customer', 
         ]);
 
         // Prijava korisnika automacki nakon prijave

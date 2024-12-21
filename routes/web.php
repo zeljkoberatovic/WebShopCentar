@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\StoreController;
+use App\Http\Controllers\Web\ProductController;
+use App\Http\Controllers\Web\BlogController;
+
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 use Laravel\Fortify\Features;
