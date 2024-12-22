@@ -31,6 +31,10 @@ Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkE
 Route::get('/reset-password/{token}', function ($token) { return view('auth.reset-password', ['token' => $token]); })->name('password.reset');
 Route::post('/reset-password', [PasswordResetController::class, 'reset']);
 
+// Verifikacija e-maila
+//Route::get('/email/verify', [EmailVerificationController::class, 'show'])->name('verification.notice');
+//Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])->name('verification.verify');
+
 // Rute za Two-Factor Authentication
 Route::middleware(['auth'])->group(function () {
     Route::post('/user/two-factor-authentication', [TwoFactorAuthenticationController::class, 'enable']);
