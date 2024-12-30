@@ -19,20 +19,25 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    // Preko ovog atributa se obavlja kastovanje tipova podataka
-    protected function casts(): array
+    // Kastovanje atributa (ispravljeno kao svojstvo)
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    /**
+     * Provera da li je korisnik admin.
+     */
+    public function isAdmin(): bool
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->role === 'admin';
     }
 
-    
-
+    /**
+     * Relacija: jedan korisnik ima jednu prodavnicu.
+     */
     public function store()
-{
-    return $this->hasOne(Store::class);
-}
-
+    {
+        return $this->hasOne(Store::class);
+    }
 }

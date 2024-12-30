@@ -53,11 +53,19 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home');
-        }
+            $user = Auth::user();
 
-        return back()->withErrors(['email' => 'Invalid credentials.']);
+        // Preusmeravanje na osnovu role
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'user') {
+            return redirect()->route('user.dashboard');
+        } else {
+            return redirect()->route('home'); // Za customer i sve ostale
+        }   
     }
+        return back()->withErrors(['email' => 'Invalid credentials.']);
+}
 
     // Odjava korisnika
     public function logout(Request $request)
