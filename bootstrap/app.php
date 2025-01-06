@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsUser;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
@@ -11,8 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        return [
+            'is_admin' => IsAdmin::class,
+            'is_user' => IsUser::class,
+        ];
+    })
+    ->withExceptions(function ($exceptions) {
         //
     })
-    ->withExceptions(function (Exceptions $exceptions) {
-        //
-    })->create();
+    ->create();

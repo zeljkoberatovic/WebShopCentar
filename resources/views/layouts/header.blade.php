@@ -7,7 +7,7 @@
             @endguest
 
             @auth
-                <span class="auth-welcome">Dobrodošli, {{ Auth::user()->name }}</span>
+                <span class="auth-welcome">Dobrodošli {{ ucfirst(Auth::user()->name )}}  ({{ ucfirst(Auth::user()->role) }})</span>
                 <a href="{{ route('logout') }}" 
                    class="auth-link"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

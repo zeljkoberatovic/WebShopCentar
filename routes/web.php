@@ -18,12 +18,18 @@ use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsUser;
+
+
+
+
 Route::middleware(['auth'])->group(function () {
     // Admin dashboard
-    Route::middleware(['is_admin'])->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::middleware([IsAdmin::class])->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     // User dashboard
-    Route::middleware(['is_user'])->get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+    Route::middleware([IsUser::class])->get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
 
     // Home (customer)
     Route::get('/', function () {

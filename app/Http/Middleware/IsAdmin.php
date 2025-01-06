@@ -16,10 +16,12 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
-            dd(Auth::user()); // Ovo će prikazati podatke o korisniku
+         // Proverava ako je korisnik prijavljen i ima rolu "user"
+         //dd('IsAdmin middleware called');
+         if (Auth::check() && Auth::user()->role === 'admin') {
+            return $next($request);
         }
 
-        return redirect()->route('home')->with('error', 'Access denied. You must be an admin.');
+        return redirect()->route('home')->with('error', 'Pristup odbijen. Morate biti administrator.');
     }
 }
