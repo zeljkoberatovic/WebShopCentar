@@ -17,11 +17,8 @@ use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
-
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
-
-
 
 
 Route::middleware(['auth'])->group(function () {
@@ -36,8 +33,6 @@ Route::middleware(['auth'])->group(function () {
         return view('home');
     })->name('home');
 });
-
-
 
 
 // Rute za prijavu, registraciju, logout
@@ -63,8 +58,6 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/user/two-factor-authentication', [TwoFactorAuthenticationController::class, 'disable']);
     Route::post('/user/confirmed-two-factor-authentication', [TwoFactorAuthenticationController::class, 'confirm']);
 });
-
-
 Route::middleware(['auth'])->group(function () {
     if (Features::enabled(Features::twoFactorAuthentication())) {
         Route::post('/user/two-factor-authentication', [TwoFactorAuthenticationController::class, 'enable']);

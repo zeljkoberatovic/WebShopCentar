@@ -16,7 +16,6 @@ class IsUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Proverava ako je korisnik prijavljen i ima rolu "user"
          // Provera korisnika
          //dd('IsUser middleware called');
         if (Auth::check() && Auth::user()->role === 'user') {

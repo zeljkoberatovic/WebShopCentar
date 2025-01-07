@@ -16,7 +16,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-         // Proverava ako je korisnik prijavljen i ima rolu "user"
+         // Proverava ako je korisnik prijavljen i ima rolu "admin"
          //dd('IsAdmin middleware called');
          if (Auth::check() && Auth::user()->role === 'admin') {
             return $next($request);
