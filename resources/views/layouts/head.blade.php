@@ -1,6 +1,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+         
+
         <title>Web Shop Centar</title>
 
         <!-- Vite CSS -->
@@ -12,8 +14,7 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
+        
 
 
         <!-- Meta tagovi za SEO -->
@@ -29,3 +30,11 @@
         <meta name="twitter:title" content="Web Shop Centar">
         <meta name="twitter:description" content="Create your own online store and manage it seamlessly with our easy-to-use platform.">
         <meta name="twitter:image" content="URL_TO_YOUR_IMAGE"> 
+
+        
+    
+
+
+
+
+       
