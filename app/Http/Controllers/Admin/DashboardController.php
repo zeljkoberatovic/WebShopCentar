@@ -9,6 +9,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard'); // Prikazuje admin dashboard
+        return view('admin.layouts.master'); // Prikazuje admin dashboard
     }
 }
