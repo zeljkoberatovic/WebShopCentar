@@ -88,10 +88,10 @@
 
         <div class="nav-item dropdown">
           <a href="#" class="nav-link d-flex lh-1  text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-            <span class="avatar avatar-sm " style="background-image: url(./static/avatars/000m.jpg)"></span>
+            <span class="avatar avatar-sm " style="background-image: url(./static/avatars/admin.jpeg)"></span>
             <div class=" ps-2 ">
-              <div style="font-size: 0.875rem;">Beratovic Zeljko</div>
-              <div class="mt-1 small text-color" style="font-size: 0.75rem;">Web Developer</div>
+              <div style="font-size: 0.875rem;">{{ ucfirst(Auth::user()->name )}}</div>
+              <div class="mt-1 small text-color" style="font-size: 0.75rem;">  ({{ ucfirst(Auth::user()->role) }})</div>
 
             </div>
           </a>
@@ -125,4 +125,4 @@
         </div>
       </div>
     </div>
-  </header>
+</header>

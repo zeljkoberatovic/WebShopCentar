@@ -1,40 +1,20 @@
-<!doctype html>
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Admin Dashboard </title>
-    <!-- CSS files -->
-    @vite('resources/css/app.css')
+@vite('resources/css/app.css')
+
    
-
-
-    <style>
-      @import url('https://rsms.me/inter/inter.css');
-      :root {
-      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
-      }
-      body {
-      	font-feature-settings: "cv03", "cv04", "cv11";
-      }
-    </style>
-  </head>
-  <body >
-    
-
-    <div class="page">
-      <!-- Sidebar -->
-      @include('admin.layouts.sidebar')
-      <!-- Navbar -->
-      @include('admin.layouts.header')
-      <div class="page-wrapper">
+  <div class="page">
+        <!-- Navbar -->
+        @include('admin.layouts.header')
+        <!-- Sidebar -->
+        @include('admin.layouts.sidebar')
         
-        @yield('content')
+        <div class="page-wrapper">
+          
+          @yield('content')
 
-        @include('admin.layouts.footer')  
-      </div>
+        <!-- Footer -->
+        @include('admin.layouts.footer')    
+        </div>
     </div>
 
     <div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
@@ -139,10 +119,6 @@
         </div>
       </div>
     </div>
-    
-    
 
-    @vite('resources/js/app.js')
-   
-  </body>
-</html>
+@vite('resources/js/app.js')
+    

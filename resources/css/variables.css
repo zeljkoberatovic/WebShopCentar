@@ -8,21 +8,31 @@
     --text-light-color: ; /* Boja za svetli tekst */
     --link-hover-color: #645452; /* Boja linkova pri hover-u */
 
-    /* Fontovi */
-    --font-family: 'Helvetica', 'Arial', sans-serif; /* Glavni font */
+    --font-family: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    --font-family-sans-serif: 'Inter Var', sans-serif; /* Sans-serif font */
+    --font-family-serif: 'Georgia', 'Times New Roman', serif; /* Serif font kao fallback */
+
+    /* Veličine fontova */
     --font-size-base: 1rem; /* Osnovna veličina fonta */
     --font-size-small: 0.875rem; /* Manji font */
     --font-size-large: 1.25rem; /* Veći font */
+
+    /* Težine fonta */
     --font-weight-normal: 400;
     --font-weight-bold: 700;
 
-    /* Razmaci i padding */
+
     --space-xs: 0.5rem; /* Extra mali razmak */
     --space-sm: 1rem; /* Mali razmak */
     --space-md: 1.5rem; /* Srednji razmak */
     --space-lg: 2rem; /* Veliki razmak */
+    --space-xl: 3rem; /* Extra veliki razmak */
+    --space-xxl: 4rem; /* Još veći razmak */
 
-
-    --box-shadow-style: 0 4px 2px -2px gray;
+    /* Box shadow stilovi */
+    --box-shadow-style: 0 4px 2px -2px gray; /* Standardna senka */
+    --box-shadow-lg: 0 6px 4px -3px rgba(0, 0, 0, 0.1); /* Veća senka */
+    --box-shadow-xl: 0 8px 6px -4px rgba(0, 0, 0, 0.2); /* Još veća senka */
+    
 
 }
