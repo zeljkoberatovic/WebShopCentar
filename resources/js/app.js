@@ -1,2 +1,10 @@
 import * as Popper from '@popperjs/core';
 import './bootstrap';
+
+// Importovanje JavaScript fajlova
+import '/resources/js/admin/assets/demo.min.js';
+import '/resources/js/admin/assets/tabler.min.js';
+import '/resources/js/admin/assets/demo-theme.min.js';
+
+
+

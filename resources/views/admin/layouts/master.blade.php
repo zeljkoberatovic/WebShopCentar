@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Admin Dashboard </title>
     <!-- CSS files -->
-    <link href="{{ asset('admin/assets/dist/css/tabler.min.css?1692870487') }}" rel="stylesheet"/>
-    <link href="{{ asset('admin/assets/dist/css/demo.min.css?1692870487') }}" rel="stylesheet"/>
+    @vite('resources/css/app.css')
+   
 
-    
 
     <style>
       @import url('https://rsms.me/inter/inter.css');
@@ -23,7 +22,7 @@
     </style>
   </head>
   <body >
-    <script src="{{ asset('admin/assets/dist/js/demo-theme.min.js?1692870487') }}"></script>
+    
 
     <div class="page">
       <!-- Sidebar -->
@@ -141,9 +140,9 @@
       </div>
     </div>
     
-    <!-- Tabler Core -->
-    <script src="{{ asset('admin/assets/dist/js/tabler.min.js?1692870487') }}" defer></script>
-    <script src="{{ asset('admin/assets/dist/js/demo.min.js?1692870487') }}" defer></script>
+    
+
+    @vite('resources/js/app.js')
    
   </body>
 </html>
