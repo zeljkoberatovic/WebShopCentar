@@ -24,5 +24,7 @@
 <!-- Laravel Vite JS ako ga koristite -->
 @vite('resources/js/app.js')
 
+<!-- Stack za dodatne skripte -->
+@stack('scripts')
   </body>
 </html>
