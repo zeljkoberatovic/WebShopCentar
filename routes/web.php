@@ -42,11 +42,13 @@ Route::get('/register', function () { return view('auth.register'); })->name('re
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Rute za zaboravljenu lozinku
+Route::get('/forgot-password', [PasswordResetController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
+
 // Rute za resetovanje lozinke
-Route::get('/forgot-password', function () { return view('auth.forgot-password'); })->name('password.request');
-Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLinkEmail']);
-Route::get('/reset-password/{token}', function ($token) { return view('auth.reset-password', ['token' => $token]); })->name('password.reset');
-Route::post('/reset-password', [PasswordResetController::class, 'reset']);
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'reset'])->name('password.update');
 
 // Verifikacija e-maila
 //Route::get('/email/verify', [EmailVerificationController::class, 'show'])->name('verification.notice');

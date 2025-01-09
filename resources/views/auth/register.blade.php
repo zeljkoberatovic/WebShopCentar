@@ -26,7 +26,13 @@
         <input type="password" name="password_confirmation" id="password_confirmation" required>
     </div>
 
-    <button type="submit">Register</button>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="form-footer">
+                <button type="submit" class="btn btn-primary w-100">Prijavite se</button>
+            </div>
+        </div>
+    </div>
 </form>
 
 
