@@ -23,10 +23,14 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'terms' => 'accepted',
         ]);
 
         // Proveri da li podaci dolaze ispravno
         Log::info('Registracija podaci:', $data);
+
+        // Logovanje vrednosti za terms checkbox
+        Log::info('Da li je checkbox označen: ' . $request->has('terms'));
 
         // Kreiraj korisnika
         $user = User::create([
@@ -34,6 +38,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => 'customer', 
+            'terms_accepted' => $request->has('terms') ? true : false,
         ]);
 
         // Prijava korisnika automacki nakon prijave

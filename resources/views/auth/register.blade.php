@@ -43,9 +43,12 @@
                     <!-- Terms and Policy -->
                     <div class="mb-3">
                         <label class="form-check">
-                            <input type="checkbox" class="form-check-input" name="terms" required/>
+                            <input type="checkbox" class="form-check-input" name="terms" value="1" required/>
                             <span class="form-check-label">Slažem se sa <a href="./terms-of-service.html" tabindex="-1">uslovima i pravilima</a>.</span>
                         </label>
+                            @error('terms')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                     </div>
                     
                     <!-- Submit Button -->
@@ -57,7 +60,7 @@
             
             <!-- Login Link -->
             <div class="text-center text-secondary mt-3">
-                Već imate nalog? <a href="{{ route('login') }}" tabindex="-1">Prijavite se</a>
+                Već imate nalog? <a href="./sign-in.html" tabindex="-1">Prijavite se</a>
             </div>
         </div>
     </div>
