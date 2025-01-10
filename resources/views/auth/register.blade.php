@@ -1,39 +1,64 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<!-- resources/views/auth/register.blade.php -->
+    <div class="page page-center">
+        <div class="container container-tight py-4">
+            <!-- Logo -->
+            <div class="text-center mb-4">
+                <a href="." class="navbar-brand navbar-brand-autodark">
+                    <span class="navbar-brand-text">WebShopCentar</span>
+                </a>
+            </div>
 
-<form method="POST" action="{{ route('register') }}">
-    @csrf
-
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{ old('name') }}" required>
-    </div>
-
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="{{ old('email') }}" required>
-    </div>
-
-    <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-    </div>
-
-    <div>
-        <label for="password_confirmation">Confirm Password</label>
-        <input type="password" name="password_confirmation" id="password_confirmation" required>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-6">
-            <div class="form-footer">
-                <button type="submit" class="btn btn-primary w-100">Prijavite se</button>
+            <!-- Registration Form -->
+            <form class="card card-md" method="POST" action="{{ route('register') }}" autocomplete="off" novalidate>
+                @csrf
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Kreirajte novi nalog</h2>
+                    
+                    <!-- Name Input -->
+                    <div class="mb-3">
+                        <label class="form-label">Vaše ime</label>
+                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}" required placeholder="Unesite ime">
+                    </div>
+                    
+                    <!-- Email Input -->
+                    <div class="mb-3">
+                        <label class="form-label">Email adresa</label>
+                        <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" required placeholder="Unesite email">
+                    </div>
+                    
+                    <!-- Password Input -->
+                    <div class="mb-3">
+                        <label class="form-label">Lozinka</label>
+                        <input type="password" class="form-control" name="password" required placeholder="Unesite lozinku">
+                    </div>
+                    
+                    <!-- Confirm Password Input -->
+                    <div class="mb-3">
+                        <label class="form-label">Potvrdite lozinku</label>
+                        <input type="password" class="form-control" name="password_confirmation" required placeholder="Potvrdite lozinku">
+                    </div>
+                    
+                    <!-- Terms and Policy -->
+                    <div class="mb-3">
+                        <label class="form-check">
+                            <input type="checkbox" class="form-check-input" name="terms" required/>
+                            <span class="form-check-label">Slažem se sa <a href="./terms-of-service.html" tabindex="-1">uslovima i pravilima</a>.</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary w-100">Kreirajte novi nalog</button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Login Link -->
+            <div class="text-center text-secondary mt-3">
+                Već imate nalog? <a href="{{ route('login') }}" tabindex="-1">Prijavite se</a>
             </div>
         </div>
     </div>
-</form>
-
-
 @endsection
