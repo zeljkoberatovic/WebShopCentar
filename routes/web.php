@@ -22,17 +22,24 @@ use App\Http\Middleware\IsUser;
 
 
 Route::middleware(['auth'])->group(function () {
-    // Admin dashboard
-    Route::middleware([IsAdmin::class])->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    // Admin routes
+    Route::middleware([IsAdmin::class])->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    });
 
-    // User dashboard
-    Route::middleware([IsUser::class])->get('/user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
+    // User routes
+    Route::middleware([IsUser::class])->prefix('user')->name('user.')->group(function () {
+        Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
+    });
 
     // Home (customer)
     Route::get('/', function () {
         return view('home');
     })->name('home');
 });
+
+
+
 
 
 // Rute za prijavu, registraciju, logout
