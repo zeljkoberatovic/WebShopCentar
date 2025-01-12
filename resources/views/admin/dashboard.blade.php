@@ -575,6 +575,7 @@
                               <th>#</th>
                               <th>Ime</th>
                               <th>Email</th>
+                              <th>Role</th>
                               <th>Datum registracije</th>
                           </tr>
                       </thead>
@@ -584,11 +585,15 @@
                                   <td>{{ $loop->iteration }}</td>
                                   <td>{{ $user->name }}</td>
                                   <td>{{ $user->email }}</td>
+                                  <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
                                   <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
                               </tr>
                           @endforeach
                       </tbody>
                   </table>
+                 
+                  <x-pagination :paginator="$users" />
+  
               </div>
           </div>
 
