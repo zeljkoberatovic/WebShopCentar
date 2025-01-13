@@ -141,38 +141,9 @@
           </div>
       </div>
       
-      <script>
-          function updateData(period) {
-              // Prvo, prema periodu, treba izabrati odgovarajuće podatke.
-              let newClientsCount = 0;
-              let percentChange = 0;
-      
-              if (period === '7') {
-                  newClientsCount = {{ $data['newClientsLast7Days'] }};
-                  percentChange = {{ number_format($data['percentChange7Days'], 2) }};
-              } else if (period === '30') {
-                  newClientsCount = {{ $data['newClientsLast30Days'] }};
-                  percentChange = {{ number_format($data['percentChange30Days'], 2) }};
-              } else if (period === '90') {
-                  newClientsCount = {{ $data['newClientsLast3Months'] }};
-                  percentChange = {{ number_format($data['percentChange3Months'], 2) }};
-              }
-      
-              // Ažuriramo podatke na stranici
-              document.getElementById('newClientsCount').innerText = newClientsCount;
-              document.getElementById('percentChange').innerText = percentChange + '%';
-      
-              // Menjamo tekst u dropdownu
-              document.getElementById('dropdownMenuButton').innerText = 'Last ' + period + ' days';
-          }
-      </script>
       
       
-      
-      
-
-
-        <div class="col-sm-6 col-lg-3">
+      <div class="col-sm-6 col-lg-3">
           <div class="card">
             <div class="card-body">
               <div class="d-flex align-items-center">
@@ -1194,4 +1165,35 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function updateData(period) {
+        let newClientsCount = 0;
+        let percentChange = 0;
+        let periodText = '';
+
+        // Prvo, prema periodu, treba izabrati odgovarajuće podatke.
+        if (period === '7') {
+            newClientsCount = {{ $data['newClientsLast7Days'] }};
+            percentChange = {{ number_format($data['percentChange7Days'], 2) }};
+            periodText = 'Poslednjih 7 dana';
+        } else if (period === '30') {
+            newClientsCount = {{ $data['newClientsLast30Days'] }};
+            percentChange = {{ number_format($data['percentChange30Days'], 2) }};
+            periodText = 'Poslednjih 30 dana';
+        } else if (period === '90') {
+            newClientsCount = {{ $data['newClientsLast3Months'] }};
+            percentChange = {{ number_format($data['percentChange3Months'], 2) }};
+            periodText = 'Poslednja 3 meseca';
+        }
+
+        // Ažuriramo podatke na stranici
+        document.getElementById('newClientsCount').innerText = newClientsCount;
+        document.getElementById('percentChange').innerText = percentChange + '%';
+
+        // Menjamo tekst u dropdownu
+        document.getElementById('dropdownMenuButton').innerText = periodText;
+    }
+</script>
+
 @endsection
