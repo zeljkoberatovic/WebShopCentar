@@ -83,9 +83,9 @@
                   <div class="dropdown">
                     <a class="dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
                     <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item active" href="#">Last 7 days</a>
-                      <a class="dropdown-item" href="#">Last 30 days</a>
-                      <a class="dropdown-item" href="#">Last 3 months</a>
+                      <a class="dropdown-item active" href="#">Poslednjih 7 dana</a>
+                      <a class="dropdown-item" href="#">Poslednjih 30 dana</a>
+                      <a class="dropdown-item" href="#">Poslednja 3 mjeseca</a>
                     </div>
                   </div>
                 </div>
@@ -103,35 +103,75 @@
             <div id="chart-revenue-bg" class="chart-sm"></div>
           </div>
         </div>
+
+        <!-- New clients -->
         <div class="col-sm-6 col-lg-3">
           <div class="card">
-            <div class="card-body">
-              <div class="d-flex align-items-center">
-                <div class="subheader">New clients</div>
-                <div class="ms-auto lh-1">
-                  <div class="dropdown">
-                    <a class="dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item active" href="#">Last 7 days</a>
-                      <a class="dropdown-item" href="#">Last 30 days</a>
-                      <a class="dropdown-item" href="#">Last 3 months</a>
-                    </div>
+              <div class="card-body">
+                  <div class="d-flex align-items-center">
+                      <div class="subheader">Novi Korisnici</div>
+                      <div class="ms-auto lh-1">
+                          <div class="dropdown">
+                              <a class="dropdown-toggle text-secondary" href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Poslednjih 7 dana</a>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#" onclick="updateData('7')">Poslednjih 7 dana</a>
+                                  <a class="dropdown-item" href="#" onclick="updateData('30')">Poslednjih 30 dana</a>
+                                  <a class="dropdown-item" href="#" onclick="updateData('90')">Poslednja 3 mjeseca</a>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
+                  
+                  <!-- Prikaz broja novih korisnika i procentualne promene -->
+                  <div class="d-flex align-items-baseline">
+                      <div id="newClientsCount" class="h1 mb-3 me-2">{{ $data['newClientsLast7Days'] }}</div>
+                      <div class="me-auto">
+                          <span id="percentChange" class="text-yellow d-inline-flex align-items-center lh-1">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                  <path d="M5 12l14 0" />
+                              </svg>
+                              {{ number_format($data['percentChange7Days'], 2) }}%
+                          </span>
+                      </div>
+                  </div>
+      
+                  <div id="chart-new-clients" class="chart-sm"></div>
               </div>
-              <div class="d-flex align-items-baseline">
-                <div class="h1 mb-3 me-2">6,782</div>
-                <div class="me-auto">
-                  <span class="text-yellow d-inline-flex align-items-center lh-1">
-                    0% <!-- Download SVG icon from http://tabler-icons.io/i/minus -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /></svg>
-                  </span>
-                </div>
-              </div>
-              <div id="chart-new-clients" class="chart-sm"></div>
-            </div>
           </div>
-        </div>
+      </div>
+      
+      <script>
+          function updateData(period) {
+              // Prvo, prema periodu, treba izabrati odgovarajuće podatke.
+              let newClientsCount = 0;
+              let percentChange = 0;
+      
+              if (period === '7') {
+                  newClientsCount = {{ $data['newClientsLast7Days'] }};
+                  percentChange = {{ number_format($data['percentChange7Days'], 2) }};
+              } else if (period === '30') {
+                  newClientsCount = {{ $data['newClientsLast30Days'] }};
+                  percentChange = {{ number_format($data['percentChange30Days'], 2) }};
+              } else if (period === '90') {
+                  newClientsCount = {{ $data['newClientsLast3Months'] }};
+                  percentChange = {{ number_format($data['percentChange3Months'], 2) }};
+              }
+      
+              // Ažuriramo podatke na stranici
+              document.getElementById('newClientsCount').innerText = newClientsCount;
+              document.getElementById('percentChange').innerText = percentChange + '%';
+      
+              // Menjamo tekst u dropdownu
+              document.getElementById('dropdownMenuButton').innerText = 'Last ' + period + ' days';
+          }
+      </script>
+      
+      
+      
+      
+
+
         <div class="col-sm-6 col-lg-3">
           <div class="card">
             <div class="card-body">
@@ -249,26 +289,14 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Traffic summary</h3>
-              <div id="chart-mentions" class="chart-lg"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title">Locations</h3>
-              <div class="ratio ratio-21x9">
-                <div>
-                  <div id="map-world" class="w-100 h-100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
+        
+        
+        
+       
+
+
         <div class="col-lg-6">
           <div class="row row-cards">
             <div class="col-12">
@@ -591,10 +619,8 @@
                           @endforeach
                       </tbody>
                   </table>
-                 
-                  <x-pagination :paginator="$users" />
-  
-              </div>
+                      <x-pagination :paginator="$users" />
+                </div>
           </div>
 
 
