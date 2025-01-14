@@ -8,12 +8,13 @@
         <div class="col">
           <!-- Page pre-title -->
           <div class="page-pretitle">
-            Overview
+            <!-- Overview -->
           </div>
           <h2 class="page-title">
-            Combo layout
+            Admin Dashboard
           </h2>
         </div>
+
         <!-- Page title actions -->
         <div class="col-auto ms-auto d-print-none">
           <div class="btn-list">
@@ -36,6 +37,7 @@
       </div>
     </div>
   </div>
+
   <!-- Page body -->
   <div class="page-body">
     <div class="container-xl">
@@ -216,6 +218,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6 col-lg-3">
               <div class="card card-sm">
                 <div class="card-body">
@@ -237,6 +240,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-sm-6 col-lg-3">
               <div class="card card-sm">
                 <div class="card-body">
@@ -561,176 +565,72 @@
           </div>
         </div>
 
-<!-- Lista Korisnika -->
-        <div class="col-lg-6">
-          <div class="card">
-              <div class="card-header border-0">
-                  <div class="card-title">Lista korisnika</div>
-              </div>
-              <div class="card-table table-responsive">
-                  <table class="table table-vcenter">
-                      <thead>
-                          <tr>
-                              <th>#</th>
-                              <th>Ime</th>
-                              <th>Email</th>
-                              <th>Role</th>
-                              <th>Datum registracije</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          @foreach ($users as $user)
+        <!-- Lista Korisnika -->
+            <div class="col-lg-6">
+              <div class="card">
+                  <div class="card-header border-0">
+                      <div class="card-title">Lista korisnika</div>
+                  </div>
+                  <div class="card-table table-responsive">
+                      <table class="table table-vcenter">
+                          <thead>
                               <tr>
-                                  <td>{{ $loop->iteration }}</td>
-                                  <td>{{ $user->name }}</td>
-                                  <td>{{ $user->email }}</td>
-                                  <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
-                                  <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+                                  <th>#</th>
+                                  <th>Ime</th>
+                                  <th>Email</th>
+                                  <th>Role</th>
+                                  <th>Datum registracije</th>
                               </tr>
-                          @endforeach
-                      </tbody>
-                  </table>
-                      <x-pagination :paginator="$users" />
-                </div>
-          </div>
-
-
-
-      </div>
-       </div>
-        <div class="col-12">
-          <div class="card card-md">
-            <div class="card-stamp card-stamp-lg">
-              <div class="card-stamp-icon bg-primary">
-                <!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11a7 7 0 0 1 14 0v7a1.78 1.78 0 0 1 -3.1 1.4a1.65 1.65 0 0 0 -2.6 0a1.65 1.65 0 0 1 -2.6 0a1.65 1.65 0 0 0 -2.6 0a1.78 1.78 0 0 1 -3.1 -1.4v-7" /><path d="M10 10l.01 0" /><path d="M14 10l.01 0" /><path d="M10 14a3.5 3.5 0 0 0 4 0" /></svg>
+                          </thead>
+                          <tbody>
+                              @foreach ($users as $user)
+                                  <tr>
+                                      <td>{{ $loop->iteration }}</td>
+                                      <td>{{ $user->name }}</td>
+                                      <td>{{ $user->email }}</td>
+                                      <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
+                                      <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+                                  </tr>
+                              @endforeach
+                          </tbody>
+                      </table>
+                          <x-pagination :paginator="$users" />
+                    </div>
               </div>
-            </div>
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-10">
-                  <h3 class="h1">Tabler Icons</h3>
-                  <div class="markdown text-secondary">
-                    All icons come from the Tabler Icons set and are MIT-licensed. Visit
-                    <a href="https://tabler-icons.io" target="_blank" rel="noopener">tabler-icons.io</a>,
-                    download any of the 4637 icons in SVG, PNG or&nbsp;React and use them in your favourite design tools.
-                  </div>
-                  <div class="mt-3">
-                    <a href="https://tabler-icons.io" class="btn btn-primary" target="_blank" rel="noopener">Download icons</a>
-                  </div>
+
+
+
+        </div>
+        </div>
+          <div class="col-12">
+            <div class="card card-md">
+              <div class="card-stamp card-stamp-lg">
+                <div class="card-stamp-icon bg-primary">
+                  <!-- Download SVG icon from http://tabler-icons.io/i/ghost -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 11a7 7 0 0 1 14 0v7a1.78 1.78 0 0 1 -3.1 1.4a1.65 1.65 0 0 0 -2.6 0a1.65 1.65 0 0 1 -2.6 0a1.65 1.65 0 0 0 -2.6 0a1.78 1.78 0 0 1 -3.1 -1.4v-7" /><path d="M10 10l.01 0" /><path d="M14 10l.01 0" /><path d="M10 14a3.5 3.5 0 0 0 4 0" /></svg>
                 </div>
               </div>
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-10">
+                    <h3 class="h1">Tabler Icons</h3>
+                    <div class="markdown text-secondary">
+                      All icons come from the Tabler Icons set and are MIT-licensed. Visit
+                      <a href="https://tabler-icons.io" target="_blank" rel="noopener">tabler-icons.io</a>,
+                      download any of the 4637 icons in SVG, PNG or&nbsp;React and use them in your favourite design tools.
+                    </div>
+                    <div class="mt-3">
+                      <a href="https://tabler-icons.io" class="btn btn-primary" target="_blank" rel="noopener">Download icons</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-12 col-lg-8">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Most Visited Pages</h3>
-            </div>
-            <div class="card-table table-responsive">
-              <table class="table table-vcenter">
-                <thead>
-                  <tr>
-                    <th>Page name</th>
-                    <th>Visitors</th>
-                    <th>Unique</th>
-                    <th colspan="2">Bounce rate</th>
-                  </tr>
-                </thead>
-                <tr>
-                  <td>
-                    /
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">4,896</td>
-                  <td class="text-secondary">3,654</td>
-                  <td class="text-secondary">82.54%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-1"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    /form-elements.html
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">3,652</td>
-                  <td class="text-secondary">3,215</td>
-                  <td class="text-secondary">76.29%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    /index.html
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">3,256</td>
-                  <td class="text-secondary">2,865</td>
-                  <td class="text-secondary">72.65%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-3"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    /icons.html
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">986</td>
-                  <td class="text-secondary">865</td>
-                  <td class="text-secondary">44.89%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-4"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    /docs/
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">912</td>
-                  <td class="text-secondary">822</td>
-                  <td class="text-secondary">41.12%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-5"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    /accordion.html
-                    <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" /><path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /></svg>
-                    </a>
-                  </td>
-                  <td class="text-secondary">855</td>
-                  <td class="text-secondary">798</td>
-                  <td class="text-secondary">32.65%</td>
-                  <td class="text-end w-1">
-                    <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-6"></div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="https://github.com/sponsors/codecalm" class="card card-sponsor" target="_blank" rel="noopener" style="background-image: url(./static/sponsor-banner-homepage.svg)" aria-label="Sponsor Tabler!">
-            <div class="card-body"></div>
-          </a>
-        </div>
+        
+
+       
+
         <div class="col-md-6 col-lg-4">
           <div class="card">
             <div class="card-header">
@@ -811,7 +711,8 @@
             </table>
           </div>
         </div>
-        <div class="col-md-12 col-lg-8">
+
+        <div class="col-md-12 col-lg-10">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Tasks</h3>
@@ -1172,7 +1073,7 @@
         let percentChange = 0;
         let periodText = '';
 
-        // Prvo, prema periodu, treba izabrati odgovarajuće podatke.
+        //  prema periodu
         if (period === '7') {
             newClientsCount = {{ $data['newClientsLast7Days'] }};
             percentChange = {{ number_format($data['percentChange7Days'], 2) }};
@@ -1187,11 +1088,11 @@
             periodText = 'Poslednja 3 meseca';
         }
 
-        // Ažuriramo podatke na stranici
+        // Ažurira podatke na stranici
         document.getElementById('newClientsCount').innerText = newClientsCount;
         document.getElementById('percentChange').innerText = percentChange + '%';
 
-        // Menjamo tekst u dropdownu
+        // Menja tekst u dropdownu
         document.getElementById('dropdownMenuButton').innerText = periodText;
     }
 </script>

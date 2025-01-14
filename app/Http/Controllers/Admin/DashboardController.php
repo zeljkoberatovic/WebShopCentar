@@ -29,10 +29,11 @@ class DashboardController extends Controller
         
 
         $data = $this->newclientsdataService->getNewClientsData();
-
         $users = $this->paginationService->paginate(User::query(), 10);
-        
+       
+       
         return view('admin.dashboard', compact('data','users'));
-    }
-        
+   
+    }     
 }
+
