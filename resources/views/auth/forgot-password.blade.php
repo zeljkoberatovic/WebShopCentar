@@ -7,7 +7,7 @@
         
         <!-- Logo i naziv sajta -->
         <div class="text-center mb-4">
-            <a href="." class="navbar-brand navbar-brand-autodark">
+            <a href="{{ url('/') }}" class="navbar-brand navbar-brand-autodark">
                 <span class="navbar-brand-text">WebShopCentar</span>
             </a>
         </div>

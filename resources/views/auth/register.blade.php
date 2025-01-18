@@ -5,7 +5,7 @@
         <div class="container container-tight col-12 col-sm-10 col-md-8 col-xl-6 col-xxl-6 py-4">
             <!-- Logo -->
             <div class="text-center mb-4">
-                <a href="." class="navbar-brand navbar-brand-autodark">
+                <a href="{{ url('/') }}" class="navbar-brand navbar-brand-autodark">
                     <span class="navbar-brand-text">WebShopCentar</span>
                 </a>
             </div>
