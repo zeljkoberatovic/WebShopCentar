@@ -1,8 +1,8 @@
 // JavaScript za prebacivanje vidljivosti lozinke
-const togglePassword = document.querySelector('#toggle-password'); 
-const passwordField = document.querySelector('#password'); 
+const togglePassword = document.querySelector('#toggle-password');
+const passwordField = document.querySelector('#password');
 
-togglePassword.addEventListener('click', function (e) {
+togglePassword.addEventListener('click', function(e) {
     // Sprečava podrazumevano ponašanje linka (ako je dugme unutar linka)
     e.preventDefault();
 
@@ -11,8 +11,8 @@ togglePassword.addEventListener('click', function (e) {
     passwordField.type = type;
 
     // Prebacuje ikonu oka (opciono)
-    const eyeIcon = togglePassword.querySelector('svg'); 
-    eyeIcon.classList.toggle('text-primary'); 
+    const eyeIcon = togglePassword.querySelector('svg');
+    eyeIcon.classList.toggle('text-primary');
 });
 
 

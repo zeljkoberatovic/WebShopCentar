@@ -22,6 +22,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
         crossorigin="anonymous"></script>
 
+        
+
 <!-- Laravel Vite JS -->
 @vite('resources/js/app.js')
 
