@@ -1,8 +1,7 @@
 @extends('layouts.app')
-
 @section('title', 'Naša ponuda')
-
 @section('content')
+
 <section class="offers">
     <div class="container">
         <!-- Naslov i uvod -->
@@ -91,4 +90,5 @@
         </section>
     </div>
 </section>
+
 @endsection
