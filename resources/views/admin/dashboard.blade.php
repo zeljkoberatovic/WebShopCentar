@@ -169,7 +169,7 @@
           <div class="card">
             <div class="card-body">
               <div class="d-flex align-items-center">
-                <div class="subheader">Sales</div>
+                <div class="subheader">Plate</div>
                 <div class="ms-auto lh-1">
                   <div class="dropdown">
                     <a class="dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
@@ -203,7 +203,7 @@
           <div class="card">
             <div class="card-body">
               <div class="d-flex align-items-center">
-                <div class="subheader">Revenue</div>
+                <div class="subheader">Prihod</div>
                 <div class="ms-auto lh-1">
                   <div class="dropdown">
                     <a class="dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Last 7 days</a>
@@ -396,336 +396,56 @@
        
 
 
-        <div class="col-lg-6">
-          <div class="row row-cards">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                  <p class="mb-3">Using Storage <strong>6854.45 MB </strong>of 8 GB</p>
-                  <div class="progress progress-separated mb-3">
-                    <div class="progress-bar bg-primary" role="progressbar" style="width: 44%" aria-label="Regular"></div>
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 19%" aria-label="System"></div>
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 9%" aria-label="Shared"></div>
-                  </div>
-                  <div class="row">
-                    <div class="col-auto d-flex align-items-center pe-2">
-                      <span class="legend me-2 bg-primary"></span>
-                      <span>Regular</span>
-                      <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-secondary">915MB</span>
-                    </div>
-                    <div class="col-auto d-flex align-items-center px-2">
-                      <span class="legend me-2 bg-info"></span>
-                      <span>System</span>
-                      <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-secondary">415MB</span>
-                    </div>
-                    <div class="col-auto d-flex align-items-center px-2">
-                      <span class="legend me-2 bg-success"></span>
-                      <span>Shared</span>
-                      <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-secondary">201MB</span>
-                    </div>
-                    <div class="col-auto d-flex align-items-center ps-2">
-                      <span class="legend me-2"></span>
-                      <span>Free</span>
-                      <span class="d-none d-md-inline d-lg-none d-xxl-inline ms-2 text-secondary">612MB</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card" style="height: 28rem">
-                <div class="card-body card-body-scrollable card-body-scrollable-shadow">
-                  <div class="divide-y">
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar">JL</span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Jeffie Lewzey</strong> commented on your <strong>"I'm not a witch."</strong> post.
-                          </div>
-                          <div class="text-secondary">yesterday</div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                          <div class="badge bg-primary"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/002m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            It's <strong>Mallory Hulme</strong>'s birthday. Wish him well!
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                          <div class="badge bg-primary"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/003m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Dunn Slane</strong> posted <strong>"Well, what do you want?"</strong>.
-                          </div>
-                          <div class="text-secondary">today</div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                          <div class="badge bg-primary"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/000f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Emmy Levet</strong> created a new project <strong>Morning alarm clock</strong>.
-                          </div>
-                          <div class="text-secondary">4 days ago</div>
-                        </div>
-                        <div class="col-auto align-self-center">
-                          <div class="badge bg-primary"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/001f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Maryjo Lebarree</strong> liked your photo.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar">EP</span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Egan Poetz</strong> registered new client as <strong>Trilia</strong>.
-                          </div>
-                          <div class="text-secondary">yesterday</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/002f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Kellie Skingley</strong> closed a new deal on project <strong>Pen Pineapple Apple Pen</strong>.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/003f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Christabel Charlwood</strong> created a new project for <strong>Wikibox</strong>.
-                          </div>
-                          <div class="text-secondary">4 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar">HS</span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Haskel Shelper</strong> change status of <strong>Tabler Icons</strong> from <strong>open</strong> to <strong>closed</strong>.
-                          </div>
-                          <div class="text-secondary">today</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/006m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Lorry Mion</strong> liked <strong>Tabler UI Kit</strong>.
-                          </div>
-                          <div class="text-secondary">yesterday</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/004f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Leesa Beaty</strong> posted new video.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/007m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Perren Keemar</strong> and 3 others followed you.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar">SA</span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Sunny Airey</strong> upload 3 new photos to category <strong>Inspirations</strong>.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/009m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Geoffry Flaunders</strong> made a <strong>$10</strong> donation.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/010m.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Thatcher Keel</strong> created a profile.
-                          </div>
-                          <div class="text-secondary">3 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/005f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Dyann Escala</strong> hosted the event <strong>Tabler UI Birthday</strong>.
-                          </div>
-                          <div class="text-secondary">4 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar" style="background-image: url(./static/avatars/006f.jpg)"></span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Avivah Mugleston</strong> mentioned you on <strong>Best of 2020</strong>.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div class="row">
-                        <div class="col-auto">
-                          <span class="avatar">AA</span>
-                        </div>
-                        <div class="col">
-                          <div class="text-truncate">
-                            <strong>Arlie Armstead</strong> sent a Review Request to <strong>Amanda Blake</strong>.
-                          </div>
-                          <div class="text-secondary">2 days ago</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         <!-- Lista Korisnika -->
-            <div class="col-lg-6">
-              <div class="card">
-                  <div class="card-header border-0">
-                      <div class="card-title">Lista korisnika</div>
-                  </div>
-                  <div class="card-table table-responsive">
-                      <table class="table table-vcenter">
-                          <thead>
-                              <tr>
-                                  <th>#</th>
-                                  <th>Ime</th>
-                                  <th>Email</th>
-                                  <th>Role</th>
-                                  <th>Datum registracije</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              @foreach ($users as $user)
-                                  <tr>
-                                      <td>{{ $loop->iteration }}</td>
-                                      <td>{{ $user->name }}</td>
-                                      <td>{{ $user->email }}</td>
-                                      <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
-                                      <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
-                                  </tr>
-                              @endforeach
-                          </tbody>
-                      </table>
-                          <x-pagination :paginator="$users" />
-                    </div>
-              </div>
+<div class="col-lg-12">
+  <div class="card">
+    <div class="card-header border-0 d-flex align-items-center justify-content-between">
+      <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
 
-
-
-            </div>
+      <form action="/search" method="get" class="d-flex" role="search">
+        <div class="input-group" style="max-width: 200px;">
+          <span class="input-group-text p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+          </span>
+          <input type="text" name="q" class="form-control form-control-sm" placeholder="Pretraga…">
         </div>
+      </form>
+    </div>
+
+    <div class="card-table table-responsive">
+      <table class="table table-striped table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>#</th>
+            <th>Ime</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Datum registracije</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($users as $user)
+            <tr>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $user->name }}</td>
+              <td>{{ $user->email }}</td>
+              <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
+              <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+      <x-pagination :paginator="$users" />
+    </div>
+  </div>
+</div>
+
 
           
         
