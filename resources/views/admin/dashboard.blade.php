@@ -269,7 +269,7 @@
       </div>
       
       
-      
+      <!--aktivni korisnici-->
       <div class="col-sm-6 col-lg-3">
           <div class="card">
             <div class="card-body">
@@ -449,6 +449,58 @@
 </div>
 
 
+
+      <!-- Lista Korisnika -->
+<div class="col-lg-12">
+  <div class="card">
+      <div class="card-header border-0 d-flex align-items-center justify-content-between">
+          <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
+
+          <!-- Forma za pretragu -->
+          <form action="/search" method="get" class="d-flex" role="search">
+              <div class="input-group" style="max-width: 200px;">
+                  <span class="input-group-text p-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                          <path d="M21 21l-6 -6" />
+                      </svg>
+                  </span>
+                  <input type="text" name="q" class="form-control form-control-sm" placeholder="Pretraga…" value="{{ request('q') }}">
+              </div>
+          </form>
+      </div>
+
+      <!-- Tabela korisnika -->
+      <div class="card-table table-responsive">
+          <table class="table table-striped table-hover align-middle">
+              <thead class="table-light">
+                  <tr>
+                      <th>#</th>
+                      <th>Ime</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Datum registracije</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach ($users as $user)
+                      <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->email }}</td>
+                          <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
+                          <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+                      </tr>
+                  @endforeach
+              </tbody>
+          </table>
+          <!-- Dodajanje paginacije ako postoji -->
+          <x-pagination :paginator="$users" />
+      </div>
+  </div>
+</div>
+
           
         
 
@@ -456,8 +508,8 @@
 
        
        
-
-        <div class="col-12">
+            <!--invoices-->
+            <div class="col-12">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Invoices</h3>
@@ -621,10 +673,10 @@
               </ul>
             </div>
           </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
   <script>
     function updateData(period) {

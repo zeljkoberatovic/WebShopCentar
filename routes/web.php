@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
        
 
-
+        Route::get('/search', [UserController::class, 'index'])->name('search');
         
     
    
