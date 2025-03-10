@@ -406,19 +406,24 @@
     <div class="card-header border-0 d-flex align-items-center justify-content-between">
       <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
 
-      <form action="/search" method="get" class="d-flex" role="search">
-        <div class="input-group" style="max-width: 200px;">
-          <span class="input-group-text p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-              <path d="M21 21l-6 -6" />
-            </svg>
-          </span>
-          <input type="text" name="q" class="form-control form-control-sm" placeholder="Pretraga…">
-        </div>
-      </form>
+      <form id="search-form" method="GET" action="{{ route('admin.search') }}">
+        <input type="text" id="search-name" name="name" placeholder="Ime korisnika" value="{{ request('name') }}">
+        <input type="text" id="search-email" name="email" placeholder="Email" value="{{ request('email') }}">
+        <button type="submit">Filtriraj</button>
+    </form>
+    
+
     </div>
+
+    <div class="card-table table-responsive">
+      <!-- Ako nema korisnika, prikaži poruku -->
+      @if ($noUsersFound)
+    <div class="alert alert-warning">
+        Nema korisnika koji odgovaraju pretrazi.
+        <a href="javascript:void(0);" onclick="window.history.back();">Vrati se nazad</a>
+    </div>
+@endif
+
 
     <div class="card-table table-responsive">
       <table class="table table-striped table-hover align-middle">
@@ -433,13 +438,13 @@
         </thead>
         <tbody>
           @foreach ($users as $user)
-            <tr>
-              <td>{{ $loop->iteration }}</td>
-              <td>{{ $user->name }}</td>
-              <td>{{ $user->email }}</td>
-              <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
-              <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
-            </tr>
+          <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td><a href="{{ route('admin.users.show', $user->id) }}">{{ $user->name }}</a></td>
+            <td>{{ $user->email }}</td> <!-- Ispravljeno za email -->
+            <td>{{ ucfirst($user->role) }}</td> <!-- Ispravljeno da prikaže celu ulogu korisnika -->
+            <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+        </tr>
           @endforeach
         </tbody>
       </table>
@@ -450,56 +455,10 @@
 
 
 
-      <!-- Lista Korisnika -->
-<div class="col-lg-12">
-  <div class="card">
-      <div class="card-header border-0 d-flex align-items-center justify-content-between">
-          <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
-
-          <!-- Forma za pretragu -->
-          <form action="/search" method="get" class="d-flex" role="search">
-              <div class="input-group" style="max-width: 200px;">
-                  <span class="input-group-text p-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                          <path d="M21 21l-6 -6" />
-                      </svg>
-                  </span>
-                  <input type="text" name="q" class="form-control form-control-sm" placeholder="Pretraga…" value="{{ request('q') }}">
-              </div>
-          </form>
-      </div>
-
-      <!-- Tabela korisnika -->
-      <div class="card-table table-responsive">
-          <table class="table table-striped table-hover align-middle">
-              <thead class="table-light">
-                  <tr>
-                      <th>#</th>
-                      <th>Ime</th>
-                      <th>Email</th>
-                      <th>Role</th>
-                      <th>Datum registracije</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  @foreach ($users as $user)
-                      <tr>
-                          <td>{{ $loop->iteration }}</td>
-                          <td>{{ $user->name }}</td>
-                          <td>{{ $user->email }}</td>
-                          <td>{{ strtoupper(substr($user->role, 0, 1)) }}</td>
-                          <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
-                      </tr>
-                  @endforeach
-              </tbody>
-          </table>
-          <!-- Dodajanje paginacije ako postoji -->
-          <x-pagination :paginator="$users" />
       </div>
   </div>
 </div>
+
 
           
         
@@ -678,35 +637,68 @@
         </div>
       </div>
 
-  <script>
-    function updateData(period) {
-        let newClientsCount = 0;
-        let percentChange = 0;
-        let periodText = '';
-
-        //  prema periodu
-        if (period === '7') {
-            newClientsCount = {{ $data['newClientsLast7Days'] }};
-            percentChange = {{ number_format($data['percentChange7Days'], 2) }};
-            periodText = 'Poslednjih 7 dana';
-        } else if (period === '30') {
-            newClientsCount = {{ $data['newClientsLast30Days'] }};
-            percentChange = {{ number_format($data['percentChange30Days'], 2) }};
-            periodText = 'Poslednjih 30 dana';
-        } else if (period === '90') {
-            newClientsCount = {{ $data['newClientsLast3Months'] }};
-            percentChange = {{ number_format($data['percentChange3Months'], 2) }};
-            periodText = 'Poslednja 3 meseca';
+      <script>
+        function updateData(period) {
+            let newClientsCount = 0;
+            let percentChange = 0;
+            let periodText = '';
+    
+            //  Prema periodu
+            if (period === '7') {
+                newClientsCount = {{ $data['newClientsLast7Days'] }};
+                percentChange = {{ number_format($data['percentChange7Days'], 2) }};
+                periodText = 'Poslednjih 7 dana';
+            } else if (period === '30') {
+                newClientsCount = {{ $data['newClientsLast30Days'] }};
+                percentChange = {{ number_format($data['percentChange30Days'], 2) }};
+                periodText = 'Poslednjih 30 dana';
+            } else if (period === '90') {
+                newClientsCount = {{ $data['newClientsLast3Months'] }};
+                percentChange = {{ number_format($data['percentChange3Months'], 2) }};
+                periodText = 'Poslednja 3 meseca';
+            }
+    
+            // Ažurira podatke na stranici
+            document.getElementById('newClientsCount').innerText = newClientsCount;
+            document.getElementById('percentChange').innerText = percentChange + '%';
+    
+            // Menja tekst u dropdownu
+            document.getElementById('dropdownMenuButton').innerText = periodText;
         }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchName = document.getElementById('search-name');
+            const searchEmail = document.getElementById('search-email');
+    
+            if (searchName && searchEmail) {
+                // Event listener za pretragu po imenu i email-u
+                function handleSearch() {
+                    let name = searchName.value.trim();
+                    let email = searchEmail.value.trim();
+    
+                    // Provera da li su oba polja prazna
+                    if (name === '' && email === '') {
+                        return;  // Ako su oba prazna, ne šaljemo zahtev
+                    }
+    
+                    // Slanje AJAX zahteva za filtriranje
+                    fetch('/admin/dashboard?name=' + name + '&email=' + email)
+                        .then(response => response.json())
+                        .then(data => {
+                            updateUserTable(data.users);
+                        })
+                        .catch(error => console.error('Greška pri pretrazi:', error));
+                }
+    
+                // Dodeljivanje event listener-a za oba polja (ime i email)
+                searchName.addEventListener('input', handleSearch);
+                searchEmail.addEventListener('input', handleSearch);
+            }
+        });
+    </script>
+    
 
-        // Ažurira podatke na stranici
-        document.getElementById('newClientsCount').innerText = newClientsCount;
-        document.getElementById('percentChange').innerText = percentChange + '%';
 
-        // Menja tekst u dropdownu
-        document.getElementById('dropdownMenuButton').innerText = periodText;
-    }
-</script>
 
 
 

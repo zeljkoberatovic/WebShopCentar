@@ -25,26 +25,22 @@ Route::middleware(['auth'])->group(function () {
     // Admin routes
     Route::middleware([IsAdmin::class])->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        Route::get('/search',[AdminDashboardController::class, 'index'])->name('search');
        
-       
+        Route::get('/users/{id}', [AdminDashboardController::class, 'show'])->name('users.show'); // Detalji korisnika
     });
 
     // User routes
     Route::middleware([IsUser::class])->prefix('user')->name('user.')->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-       
-
-        Route::get('/search', [UserController::class, 'index'])->name('search');
-        
-    
-   
     });
-
-    // Home (customer)
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
 });
+
+// Home (customer)
+Route::get('/', function () {
+    return view('home');
+})->name('home');
 
 
 

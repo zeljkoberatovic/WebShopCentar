@@ -5,6 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+
+use App\Services\Filters\UserFilter;
 
 class User extends Authenticatable
 {
@@ -37,6 +41,34 @@ class User extends Authenticatable
     {
         return $this->role === 'user';
     }
+
+    
+
+    // Ovaj metod treba da bude scope za filtriranje korisnika po imenu
+    public function scopeFilter(Builder $query, $filters)
+    {
+        foreach ($filters as $filter => $value) {
+            if (method_exists($this, $filter)) {
+                // Pozivamo metod za svaki filter
+                $query->{$filter}($value);
+            }
+        }
+        
+        return $query;
+    }
+
+    // Scope za filtriranje po imenu
+    public function scopeName(Builder $query, $value)
+    {
+        return $query->where('name', 'like', "%{$value}%");
+    }
+
+    // Scope za filtriranje po emailu
+    public function scopeEmail(Builder $query, $value)
+    {
+        return $query->where('email', 'like', "%{$value}%");
+    }
+
 
     /**
      * Relacija: jedan korisnik ima jednu prodavnicu.
