@@ -38,7 +38,8 @@ class DashboardController extends Controller
     // Vraćanje pogleda sa podacima i filtriranim korisnicima
         return view('admin.dashboard', compact('data', 'users', 'noUsersFound'));
 
-    } 
+    }
+     
     
     public function show($id)
     {
