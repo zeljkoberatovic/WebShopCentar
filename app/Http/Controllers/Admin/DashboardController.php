@@ -1,55 +1,43 @@
 <?php
 
-
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Services\PaginationService;
 use App\Services\Admin\NewClientsDataService;
+use App\Services\Admin\UserService;
 
 class DashboardController extends Controller
 {
-    protected $paginationService;
     protected $newclientsdataService;
+    protected $userService;
 
     // Konstruktorska injekcija za PaginationService
-    public function __construct(PaginationService $paginationService,
-                                NewClientsDataService $newclientsdataService)
+    public function __construct(NewClientsDataService $newclientsdataService,
+                                UserService $userService,)
     {
-        $this->paginationService = $paginationService;
+        
         $this->newclientsdataService = $newclientsdataService;
+        $this->userService = $userService;
     }
 
     public function index(Request $request)
     {
-        // Dobijamo podatke za nove klijente
+    
+    // Dobijamo podatke za nove klijente
         $data = $this->newclientsdataService->getNewClientsData();
 
-        // Start query
-        $query = User::query();
-
-        // Filter by name if provided
-        if ($request->has('name') && $request->input('name') !== '') {
-            $query->where('name', 'like', '%' . $request->input('name') . '%');
-        }
-
-        // Filter by email if provided
-        if ($request->has('email') && $request->input('email') !== '') {
-            $query->where('email', 'like', '%' . $request->input('email') . '%');
-        }
-
-        // Dobijamo filtrirane korisnike sa paginacijom
-        $users = $query->paginate(10);
+    // Koristi UserService za filtriranje i paginaciju korisnika
+        $users = $this->userService->getFilteredUsers($request);
 
         
-    // Proveri da li su korisnici prazni
-    $noUsersFound = $users->isEmpty();
+    // Proverava da li su korisnici prazni
+        $noUsersFound = $users->isEmpty();
 
-        // Vraćanje pogleda sa podacima i filtriranim korisnicima
+    // Vraćanje pogleda sa podacima i filtriranim korisnicima
         return view('admin.dashboard', compact('data', 'users', 'noUsersFound'));
+
     } 
     
     public function show($id)
