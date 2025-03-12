@@ -48,120 +48,137 @@
           <h5 class="modal-title">Kreiraj novu prodavnicu</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zatvori"></button>
         </div>
-        <div class="modal-body">
-          <!-- Ime prodavnice -->
-          <div class="mb-3">
-            <label class="form-label">Ime prodavnice</label>
-            <input type="text" class="form-control" name="store-name" placeholder="Unesite ime prodavnice" required>
-          </div>
-  
-          <!-- Opis prodavnice -->
-          <div class="mb-3">
-            <label class="form-label">Opis prodavnice</label>
-            <textarea class="form-control" name="store-description" rows="4" placeholder="Unesite pravni opis prodavnice" required></textarea>
-          </div>
-  
-          <!-- Vlasnik prodavnice -->
-          <div class="mb-3">
-            <label class="form-label">Ime vlasnika prodavnice</label>
-            <input type="text" class="form-control" name="store-owner" placeholder="Unesite ime vlasnika prodavnice" required>
-          </div>
-  
-          <!-- Polje za upload loga -->
-          <div class="mb-3">
-            <label class="form-label">Logo prodavnice</label>
-            <input type="file" class="form-control" name="store-logo" accept="image/*" required>
-          </div>
-  
-          <!-- Vrsta prodavnice -->
-          <label class="form-label">Vrsta prodavnice</label>
-          <div class="form-selectgroup-boxes row mb-3">
-            <div class="col-lg-6">
-              <label class="form-selectgroup-item">
-                <input type="radio" name="store-type" value="1" class="form-selectgroup-input" checked>
-                <span class="form-selectgroup-label d-flex align-items-center p-3">
-                  <span class="me-3">
-                    <span class="form-selectgroup-check"></span>
-                  </span>
-                  <span class="form-selectgroup-label-content">
-                    <span class="form-selectgroup-title strong mb-1">Fizička prodavnica</span>
-                    <span class="d-block text-secondary">Prodavnica koja se nalazi na fizičkoj lokaciji.</span>
-                  </span>
-                </span>
-              </label>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-selectgroup-item">
-                <input type="radio" name="store-type" value="2" class="form-selectgroup-input">
-                <span class="form-selectgroup-label d-flex align-items-center p-3">
-                  <span class="me-3">
-                    <span class="form-selectgroup-check"></span>
-                  </span>
-                  <span class="form-selectgroup-label-content">
-                    <span class="form-selectgroup-title strong mb-1">Online prodavnica</span>
-                    <span class="d-block text-secondary">Prodavnica koja funkcioniše samo putem interneta.</span>
-                  </span>
-                </span>
-              </label>
-            </div>
-          </div>
-  
-          <!-- URL prodavnice -->
-          <div class="row">
-            <div class="col-lg-8">
+
+        <!-- Forma za kreiranje prodavnice -->
+        <form action="{{ route('admin.stores.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          <div class="modal-body">
+              <!-- Ime prodavnice -->
               <div class="mb-3">
-                <label class="form-label">URL prodavnice</label>
-                <div class="input-group input-group-flat">
-                  <span class="input-group-text">
-                    https://moja-prodavnica.com/
-                  </span>
-                  <input type="text" class="form-control ps-0" value="prodavnica-01" name="store-url" autocomplete="off" required>
-                </div>
+                  <label class="form-label">Ime prodavnice</label>
+                  <input type="text" class="form-control" name="name" placeholder="Unesite ime prodavnice" required>
               </div>
-            </div>
-  
-            <!-- Vidljivost prodavnice -->
-            <div class="col-lg-4">
+          
+              <!-- Opis prodavnice -->
               <div class="mb-3">
-                <label class="form-label">Vidljivost</label>
-                <select class="form-select" name="store-visibility">
-                  <option value="1" selected>Privatna</option>
-                  <option value="2">Javna</option>
-                  <option value="3">Skrivena</option>
+                  <label class="form-label">Opis prodavnice</label>
+                  <textarea class="form-control" name="description" rows="4" placeholder="Unesite opis prodavnice" required></textarea>
+              </div>
+          
+              <!-- Polje za upload loga (nije obavezno) -->
+              <div class="mb-3">
+                  <label class="form-label">Logo prodavnice</label>
+                  <input type="file" class="form-control" name="logo" accept="image/*">
+              </div>
+          
+              <!-- Vrsta prodavnice -->
+              <label class="form-label">Vrsta prodavnice</label>
+              <div class="form-selectgroup-boxes row mb-3">
+                  <div class="col-lg-6">
+                      <label class="form-selectgroup-item">
+                          <input type="radio" name="type" value="physical" class="form-selectgroup-input" checked>
+                          <span class="form-selectgroup-label d-flex align-items-center p-3">
+                              <span class="form-selectgroup-label-content">
+                                  <span class="form-selectgroup-title strong mb-1">Fizička prodavnica</span>
+                                  <span class="d-block text-secondary">Prodavnica sa fizičkom lokacijom.</span>
+                              </span>
+                          </span>
+                      </label>
+                  </div>
+                  <div class="col-lg-6">
+                      <label class="form-selectgroup-item">
+                          <input type="radio" name="type" value="online" class="form-selectgroup-input">
+                          <span class="form-selectgroup-label d-flex align-items-center p-3">
+                              <span class="form-selectgroup-label-content">
+                                  <span class="form-selectgroup-title strong mb-1">Online prodavnica</span>
+                                  <span class="d-block text-secondary">Prodavnica koja funkcioniše samo putem interneta.</span>
+                              </span>
+                          </span>
+                      </label>
+                  </div>
+              </div>
+          
+              <!-- URL prodavnice -->
+              <div class="mb-3">
+                  <label class="form-label">URL prodavnice</label>
+                  <div class="input-group input-group-flat">
+                      <span class="input-group-text">https://moja-prodavnica.com/</span>
+                      <input type="text" class="form-control" name="url" placeholder="Unesite URL prodavnice" required>
+                  </div>
+              </div>
+          
+              <!-- Vidljivost prodavnice -->
+              <div class="mb-3">
+                  <label class="form-label">Vidljivost</label>
+                  <select class="form-select" name="visibility">
+                      <option value="private" selected>Privatna</option>
+                      <option value="public">Javna</option>
+                      <option value="hidden">Skrivena</option>
+                  </select>
+              </div>
+
+              <!-- Status prodavnice -->
+<div class="mb-3">
+  <label class="form-label">Status</label>
+  <select class="form-select" name="status" required>
+      <option value="active" selected>Aktivna</option>
+      <option value="inactive">Neaktivna</option>
+  </select>
+</div>
+
+          
+              <!-- Dodatne informacije -->
+              <div class="mb-3">
+                  <label class="form-label">Dodatne informacije</label>
+                  <textarea class="form-control" rows="3" name="additional_info"></textarea>
+              </div>
+
+              <!-- Vlasnik prodavnice -->
+              <div class="mb-3">
+                <label class="form-label">Vlasnik prodavnice</label>
+                <select class="form-select" name="user_id" required>
+                    <option value="">Izaberite vlasnika</option>
+                    @foreach($users as $user)
+                        <option value="{{ $user->id }}">{{ $user->name }} ({{ $user->email }})</option>
+                    @endforeach
                 </select>
               </div>
-            </div>
           </div>
-  
-          <!-- Dodatne informacije -->
-          <div class="row">
-            <div class="col-lg-12">
-              <div>
-                <label class="form-label">Dodatne informacije</label>
-                <textarea class="form-control" rows="3" name="additional-info"></textarea>
-              </div>
-            </div>
+          
+          <!-- Dugme za akciju -->
+          <div class="modal-footer">
+            <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+              Otkaži
+            </a>
+            <button type="submit" class="btn btn-primary ms-auto">
+              <!-- Ikonica plus -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 5l0 14" />
+                <path d="M5 12l14 0" />
+              </svg>
+              Kreiraj novu prodavnicu
+            </button>
           </div>
-        </div>
-  
-        <!-- Dugmadi za akciju -->
-        <div class="modal-footer">
-          <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-            Otkaži
-          </a>
-          <button type="submit" class="btn btn-primary ms-auto" data-bs-dismiss="modal">
-            <!-- Ikonica plus -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 5l0 14" />
-              <path d="M5 12l14 0" />
-            </svg>
-            Kreiraj novu prodavnicu
-          </button>
-        </div>
+        </form>
       </div>
     </div>
-  </div>
+</div>
+
+<!-- Prikaz poruka o uspehu i grešci -->
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
+
 
   <!-- Page body -->
   <div class="page-body">
@@ -400,64 +417,64 @@
 
         
 
-        <!-- Lista Korisnika -->
-<div class="col-lg-12">
-  <div class="card">
-    <div class="card-header border-0 d-flex align-items-center justify-content-between">
-      <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
+            <!-- Lista Korisnika -->
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header border-0 d-flex align-items-center justify-content-between">
+                <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
 
-      <form id="search-form" method="GET" action="{{ route('admin.search') }}">
-        <input type="text" id="search-name" name="name" placeholder="Ime korisnika" value="{{ request('name') }}">
-        <input type="text" id="search-email" name="email" placeholder="Email" value="{{ request('email') }}">
-        <button type="submit">Filtriraj</button>
-    </form>
+                      <form id="search-form" method="GET" action="{{ route('admin.search') }}">
+                        <input type="text" id="search-name" name="name" placeholder="Ime korisnika" value="{{ request('name') }}">
+                        <input type="text" id="search-email" name="email" placeholder="Email" value="{{ request('email') }}">
+                        <button type="submit">Filtriraj</button>
+                      </form>
     
 
-    </div>
+          </div>
 
-    <div class="card-table table-responsive">
-      <!-- Ako nema korisnika, prikaži poruku -->
-      @if ($noUsersFound)
-    <div class="alert alert-warning">
-        Nema korisnika koji odgovaraju pretrazi.
-        <a href="javascript:void(0);" onclick="window.history.back();">Vrati se nazad</a>
-    </div>
-@endif
-
-
-    <div class="card-table table-responsive">
-      <table class="table table-striped table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>#</th>
-            <th>Ime</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Datum registracije</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($users as $user)
-          <tr>
-            <td>{{ $loop->iteration }}</td>
-            <td><a href="{{ route('admin.users.show', $user->id) }}">{{ $user->name }}</a></td>
-            <td>{{ $user->email }}</td> <!-- Ispravljeno za email -->
-            <td>{{ ucfirst($user->role) }}</td> <!-- Ispravljeno da prikaže celu ulogu korisnika -->
-            <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
-        </tr>
-          @endforeach
-        </tbody>
-      </table>
-      <x-pagination :paginator="$users" />
-    </div>
-  </div>
-</div>
+          <div class="card-table table-responsive">
+                      <!-- Ako nema korisnika, prikaži poruku -->
+                      @if ($noUsersFound)
+                        <div class="alert alert-warning">
+                            Nema korisnika koji odgovaraju pretrazi.
+                            <a href="javascript:void(0);" onclick="window.history.back();">Vrati se nazad</a>
+                        </div>
+                      @endif
 
 
+                  <div class="card-table table-responsive">
+                  <table class="table table-striped table-hover align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>#</th>
+                      <th>Ime</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                      <th>Datum registracije</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($users as $user)
+                    <tr>
+                      <td>{{ $loop->iteration }}</td>
+                      <td><a href="{{ route('admin.users.show', $user->id) }}">{{ $user->name }}</a></td>
+                      <td>{{ $user->email }}</td> <!-- Ispravljeno za email -->
+                      <td>{{ ucfirst($user->role) }}</td> <!-- Ispravljeno da prikaže celu ulogu korisnika -->
+                      <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+                  </tr>
+                    @endforeach
+                  </tbody>
+                  </table>
+                  <x-pagination :paginator="$users" />
+                  </div>
+                </div>
+                </div>
 
-      </div>
-  </div>
-</div>
+
+
+              </div>
+            </div>
+            </div>
 
 
           
@@ -634,7 +651,8 @@
           </div>
             </div>
           </div>
-        </div>
+            </div>
+        
       </div>
 
       <script>

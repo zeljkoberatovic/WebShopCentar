@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Web\HomeController;
-use App\Http\Controllers\Web\StoreController;
 use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\BlogController;
 
@@ -15,10 +14,14 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
+use App\Http\Controllers\Admin\StoreController;  
+
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
+
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -29,6 +32,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/search',[AdminDashboardController::class, 'index'])->name('search');
        
         Route::get('/users/{id}', [AdminDashboardController::class, 'show'])->name('users.show'); // Detalji korisnika
+
+        Route::get('/stores', [StoreController::class, 'index'])->name('.stores.index'); // Lista prodavnica
+        Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.create'); // Forma za kreiranje
+        Route::post('/stores', [StoreController::class, 'store'])->name('stores.store'); // Čuvanje prodavnice
+
+
     });
 
     // User routes
@@ -82,8 +91,7 @@ Route::middleware(['auth'])->group(function () {
 // Ruta za home stranu
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Ruta za prodavnice
-Route::get('/stores', [StoreController::class, 'stores'])->name('stores');
+
 
 // Blog kontroler
 Route::resource('blog', BlogController::class);

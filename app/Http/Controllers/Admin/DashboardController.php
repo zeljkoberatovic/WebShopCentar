@@ -13,7 +13,7 @@ class DashboardController extends Controller
     protected $newclientsdataService;
     protected $userService;
 
-    // Konstruktorska injekcija za PaginationService
+    
     public function __construct(NewClientsDataService $newclientsdataService,
                                 UserService $userService,)
     {
@@ -28,18 +28,18 @@ class DashboardController extends Controller
     // Dobijamo podatke za nove klijente
         $data = $this->newclientsdataService->getNewClientsData();
 
-    // Koristi UserService za filtriranje i paginaciju korisnika
+    // Koristimo UserService za filtriranje i paginaciju korisnika
         $users = $this->userService->getFilteredUsers($request);
 
         
-    // Proverava da li su korisnici prazni
+    // Provjerava da li su korisnici prazni
         $noUsersFound = $users->isEmpty();
 
     // Vraćanje pogleda sa podacima i filtriranim korisnicima
         return view('admin.dashboard', compact('data', 'users', 'noUsersFound'));
 
     }
-     
+
     
     public function show($id)
     {

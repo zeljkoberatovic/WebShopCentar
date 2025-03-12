@@ -15,13 +15,22 @@ return new class extends Migration
             $table->id();
 
             $table->string('name'); // Naziv prodavnice
-            $table->string('location'); // Lokacija prodavnice
+            $table->string('location')->nullable(); // Lokacija prodavnice (nullable)
             $table->text('description')->nullable(); // Opis prodavnice
-            $table->string('image')->nullable(); // URL slike prodavnice
-
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            
+            $table->string('logo')->nullable(); // Putanja do loga prodavnice (nullable)
+            $table->enum('status', ['active', 'inactive'])->default('active'); // Status prodavnice
+            $table->enum('type', ['physical', 'online'])->default('physical'); // Vrsta prodavnice
+            $table->string('url')->unique(); // URL prodavnice (unikatan)
+            $table->enum('visibility', ['public', 'private', 'hidden'])->default('public'); // Vidljivost prodavnice
+            $table->text('additional_info')->nullable(); // Dodatne informacije (nullable)
+            $table->unsignedBigInteger('user_id'); // Povezivanje sa korisnikom (adminom)
             $table->timestamps();
+
+            // Dodavanje indeksa za user_id za bolju performansu
+            $table->index('user_id');
+
+            // Povezivanje sa tabelom korisnika ('users')
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -19,32 +19,7 @@
 </section>
 
 
-<section class="marketplace">
-    <div class="container">
-        <h1 class="text-center mb-5">Istaknute Prodavnice</h1>
-        <div class="store-flex-container">
-            @foreach ($stores as $store)
-                <div class="store-card">
-                    <div class="card shadow-sm h-100">
-                        <img src="{{ $store->image }}" class="card-img-top" alt="{{ $store->name }}">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">{{ $store->name }}</h5>
-                            <p class="card-text text-truncate" title="{{ $store->description }}">{{ $store->description }}</p>
-                            <p class="text-muted mb-4">📍 {{ $store->location }}</p>
-                            <a href="#" class="btn btn-primary mt-auto">Saznaj više</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
 
-        @if ($stores->count() >= 10)
-            <div class="text-center mt-4">
-                <a href="{{ route('stores') }}" class="btn btn-outline-primary">Pogledaj sve prodavnice</a>
-            </div>
-        @endif
-    </div>
-</section>
 
 
 <section class="vision-mission">

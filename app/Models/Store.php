@@ -10,20 +10,22 @@ class Store extends Model
     use HasFactory;
     
     protected $fillable = [
-        'name',
-        'location',
-        'description',
-        'image',
+     'name',
+    'description',
+    'location',
+    'status',
+    'user_id',
+    'type',
+    'url',
+    'visibility',
+    'additional_info',
+        
     ];
 
     public function user()
 {
-    return $this->belongsTo(User::class);
+    return $this->belongsTo(User::class, 'user_id');
 }
 
-public function products()
-{
-    return $this->hasMany(Product::class);
-}
 
 }
