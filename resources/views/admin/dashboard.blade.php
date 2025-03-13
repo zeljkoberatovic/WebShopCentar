@@ -90,7 +90,7 @@
                   <div class="mb-3">
                     <label class="form-label">Logo prodavnice</label>
                     <input type="file" class="form-control" name="logo" accept="image/jpeg,image/png,image/jpg,image/gif">
-                    <small class="form-text text-muted">Dozvoljeni formati: JPEG, PNG, JPG, GIF. Maksimalna veličina: 2MB.</small>
+                    <small class="form-text text-muted">Dozvoljeni formati: JPEG, PNG, JPG, GIF. Maksimalna veličina: 4MB.</small>
                   </div>
 
           

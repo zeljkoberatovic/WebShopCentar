@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Store;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
+use App\Services\Admin\StoreService;
 
 class StoreController extends Controller
 {
-    // Konstruktor za middleware
-    public function __construct()
+    protected $storeService;
+
+    public function __construct(StoreService $storeService)
     {
         $this->middleware('auth'); // Moraš biti prijavljen
+        $this->storeService = $storeService;
     }
 
-    // Prikazivanje forme za kreiranje nove prodavnice
     public function create()
     {
         $users = User::all();
@@ -25,51 +24,27 @@ class StoreController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'description' => 'required|string',
-        'location' => 'nullable|string',
-        'user_id' => 'required|exists:users,id',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-        'type' => 'required|in:physical,online',
-        'url' => 'required|unique:stores,url',
-        'visibility' => 'required|in:private,public,hidden',
-        'additional_info' => 'nullable|string',
-        'status' => 'required|in:active,inactive',
-    ]);
-
-    try {
-        // Kreiraj novi Store objekat
-        $store = new Store([
-            'name' => $request->name,
-            'description' => $request->description,
-            'location' => $request->location,
-            'user_id' => $request->user_id, // Vlasnik prodavnice
-            'status' => $request->status,
-            'type' => $request->type,
-            'url' => $request->url,
-            'visibility' => $request->visibility,
-            'additional_info' => $request->additional_info,
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'location' => 'nullable|string',
+            'user_id' => 'required|exists:users,id',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'type' => 'required|in:physical,online',
+            'url' => 'required|unique:stores,url',
+            'visibility' => 'required|in:private,public,hidden',
+            'additional_info' => 'nullable|string',
+            'status' => 'required|in:active,inactive',
         ]);
 
-        // Provera i čuvanje loga ako postoji
-        if ($request->hasFile('logo')) {
-            $path = $request->file('logo')->store('logos', 'public');
-            $store->logo = $path;
+        try {
+            // Koristi StoreService za kreiranje prodavnice
+            $store = $this->storeService->createStore($request);
+
+            return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspešno kreirana!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Došlo je do greške prilikom kreiranja prodavnice.');
         }
-
-        // Spremanje u bazu
-        $store->save();
-
-        // Redirektuj sa uspešnom porukom
-        return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspešno kreirana!');
-    } catch (\Exception $e) {
-        // Loguj grešku
-        \Log::error('Greška pri kreiranju prodavnice: ' . $e->getMessage());
-        
-        // Vratiti grešku korisniku
-        return redirect()->back()->with('error', 'Došlo je do greške prilikom kreiranja prodavnice. Pokušajte ponovo.');
-    }
     }
 }
