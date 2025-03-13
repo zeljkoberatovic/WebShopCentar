@@ -31,7 +31,7 @@ class StoreController extends Controller
         'description' => 'required|string',
         'location' => 'nullable|string',
         'user_id' => 'required|exists:users,id',
-        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
         'type' => 'required|in:physical,online',
         'url' => 'required|unique:stores,url',
         'visibility' => 'required|in:private,public,hidden',
@@ -63,7 +63,7 @@ class StoreController extends Controller
         $store->save();
 
         // Redirektuj sa uspešnom porukom
-        return redirect()->route('admin.stores.index')->with('success', 'Prodavnica je uspešno kreirana!');
+        return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspešno kreirana!');
     } catch (\Exception $e) {
         // Loguj grešku
         \Log::error('Greška pri kreiranju prodavnice: ' . $e->getMessage());

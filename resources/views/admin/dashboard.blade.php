@@ -1,6 +1,20 @@
 @extends('admin.layouts.master')
 @section('content')
 
+
+<!-- Prikaz poruka o uspehu i grešci -->
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
  
 
 <!-- Page header -->
@@ -58,6 +72,13 @@
                   <label class="form-label">Ime prodavnice</label>
                   <input type="text" class="form-control" name="name" placeholder="Unesite ime prodavnice" required>
               </div>
+
+              <!-- Lokacija prodavnice -->
+                <div class="mb-3">
+                  <label class="form-label">Lokacija prodavnice</label>
+                  <input type="text" class="form-control" name="location" placeholder="Unesite lokaciju prodavnice" >
+                </div>
+
           
               <!-- Opis prodavnice -->
               <div class="mb-3">
@@ -66,10 +87,12 @@
               </div>
           
               <!-- Polje za upload loga (nije obavezno) -->
-              <div class="mb-3">
-                  <label class="form-label">Logo prodavnice</label>
-                  <input type="file" class="form-control" name="logo" accept="image/*">
-              </div>
+                  <div class="mb-3">
+                    <label class="form-label">Logo prodavnice</label>
+                    <input type="file" class="form-control" name="logo" accept="image/jpeg,image/png,image/jpg,image/gif">
+                    <small class="form-text text-muted">Dozvoljeni formati: JPEG, PNG, JPG, GIF. Maksimalna veličina: 2MB.</small>
+                  </div>
+
           
               <!-- Vrsta prodavnice -->
               <label class="form-label">Vrsta prodavnice</label>
@@ -165,18 +188,7 @@
     </div>
 </div>
 
-<!-- Prikaz poruka o uspehu i grešci -->
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
 
-@if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
 
 
 
