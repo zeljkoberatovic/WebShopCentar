@@ -27,15 +27,17 @@ use App\Http\Middleware\IsUser;
 Route::middleware(['auth'])->group(function () {
     // Admin routes
     Route::middleware([IsAdmin::class])->prefix('admin')->name('admin.')->group(function () {
+
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/search',[AdminDashboardController::class, 'index'])->name('search');
        
         Route::get('/users/{id}', [AdminDashboardController::class, 'show'])->name('users.show'); // Detalji korisnika
 
-        Route::get('/stores', [StoreController::class, 'index'])->name('.stores.index'); // Lista prodavnica
+        Route::get('/stores', [StoreController::class, 'index'])->name('stores.index'); // Lista prodavnica
         Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.create'); // Forma za kreiranje
         Route::post('/stores', [StoreController::class, 'store'])->name('stores.store'); // Čuvanje prodavnice
+        Route::get('/stores/{id}', [StoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
 
 
     });
