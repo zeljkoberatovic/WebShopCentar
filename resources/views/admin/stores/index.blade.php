@@ -4,25 +4,17 @@
         <h3 class="card-title">Lista prodavnica</h3>
     </div>
 
-    <div class="card-body border-bottom py-3">
-        <div class="d-flex">
-            <!-- Broj prikazanih stavki -->
-            <div class="text-secondary">
-                Show
-                <div class="mx-2 d-inline-block">
-                    <input type="text" class="form-control form-control-sm" value="8" size="3" aria-label="Entries count">
-                </div>
-                entries
-            </div>
-            <!-- Pretraga -->
-            <div class="ms-auto text-secondary">
-                Search:
-                <div class="ms-2 d-inline-block">
-                    <input type="text" class="form-control form-control-sm" placeholder="Search store" aria-label="Search store" name="search">
-                </div>
-            </div>
+
+
+    <!-- Pretraga -->
+    <div class="ms-auto text-secondary">
+        Search:
+        <div class="ms-2 d-inline-block">
+            <input type="text" class="form-control form-control-sm" placeholder="Search store" aria-label="Search store" name="search" value="{{ request('search') }}">
         </div>
     </div>
+
+    
 
     <!-- Filtriranje po statusu, tipu i vidljivosti -->
     <div class="card-body">
@@ -78,7 +70,6 @@
                         <td><input class="form-check-input m-0 align-middle" type="checkbox" aria-label="Select store"></td>
                         <td><span class="text-secondary">{{ $store->id }}</span></td>
                         <td><a href="{{ route('admin.stores.show', $store->id) }}" class="text-reset">{{ $store->name }}</a></td>
-                        <td>{{ $store->description }}</td>
                         <td>{{ $store->location ?? 'N/A' }}</td>
                         <td>{{ ucfirst($store->type) }}</td>
                         <td>{{ ucfirst($store->visibility) }}</td>
@@ -92,8 +83,8 @@
                             <span class="dropdown">
                                 <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown">Actions</button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item" href="">Edit</a>
-                                    <form action="" method="POST" style="display:inline;">
+                                    <a class="dropdown-item" href="{{ route('admin.stores.edit', $store->id) }}">Edit</a>
+                                    <form action="{{ route('admin.stores.destroy', $store->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="dropdown-item">Delete</button>
@@ -112,7 +103,6 @@
             </tbody>
         </table>
     </div>
-    
 
    
 </div>

@@ -41,7 +41,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/stores', [StoreController::class, 'index'])->name('stores.index'); // Lista prodavnica
         Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.create'); // Forma za kreiranje
         Route::post('/stores', [StoreController::class, 'store'])->name('stores.store'); // Čuvanje prodavnice
-        Route::get('/stores/{id}', [StoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
+        Route::get('/stores/{store}', [StoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
+        Route::get('/stores/{store}/edit', [StoreController::class, 'edit'])->name('stores.edit');
+        Route::delete('/stores/{store}', [StoreController::class, 'destroy'])->name('stores.destroy');
+
 
 
     });

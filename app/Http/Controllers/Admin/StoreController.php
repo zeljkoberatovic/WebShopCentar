@@ -30,9 +30,30 @@ class StoreController extends Controller
          
      $stores = $this->storeService->getAllStores();
     
-     return view('admin.stores.create', compact('$stores'));
+     return view('admin.stores.create', compact('stores'));
     
     }
+
+    public function show(Store $store)
+{
+   
+    return view('admin.stores.show', compact('store'));
+}
+
+public function edit(Store $store)
+{
+    
+    return view('admin.stores.edit', compact('store'));
+}
+
+public function destroy(Store $store)
+    {
+        $store->delete();
+        return redirect()->route('admin.stores.index')->with('success', 'Prodavnica je uspjesno obrisana!');
+    }
+
+
+
 
 
     public function store(Request $request)
