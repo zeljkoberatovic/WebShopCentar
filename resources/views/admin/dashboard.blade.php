@@ -20,10 +20,8 @@
 
 
 <!-- Uključivanje forme za kreiranje prodavnice -->
+
 @include('admin.stores.create')
-
-
-
 
  
 
@@ -71,6 +69,8 @@
 
 
 
+             
+              
 
 
             <!-- Page body -->
@@ -359,7 +359,7 @@
   </div>
 </div>
 
-@include('admin.stores.index')
+
         
        
 
@@ -373,21 +373,16 @@
           
         
 
-       
+         
 
+            @include('admin.stores.index')
        
        
-            <!--Lista Prodavnica
-            <div class="col-12">
-          
-        </div>-->
-
-
           </div>
             </div>
         
       </div>
-      
+     
       <script>
         function updateData(period) {
             let newClientsCount = 0;

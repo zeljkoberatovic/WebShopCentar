@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Store;
 use App\Services\Admin\NewClientsDataService;
 use App\Services\Admin\UserService;
+
 
 class DashboardController extends Controller
 {
     protected $newclientsdataService;
     protected $userService;
+    
 
     
     public function __construct(NewClientsDataService $newclientsdataService,
@@ -20,6 +23,7 @@ class DashboardController extends Controller
         
         $this->newclientsdataService = $newclientsdataService;
         $this->userService = $userService;
+        
     }
 
     public function index(Request $request)
@@ -34,9 +38,10 @@ class DashboardController extends Controller
         
     // Provjerava da li su korisnici prazni
         $noUsersFound = $users->isEmpty();
+        
 
     // Vraćanje pogleda sa podacima i filtriranim korisnicima
-        return view('admin.dashboard', compact('data', 'users', 'noUsersFound'));
+        return view('admin.dashboard', compact('data', 'users', 'noUsersFound',));
 
     }
 

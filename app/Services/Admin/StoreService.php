@@ -27,4 +27,12 @@ class StoreService
         // Kreiranje prodavnice
         return Store::create($data);
     }
+
+    public function getAllStores()
+    {
+
+        return Store::all();
+
+    }
+
 }

@@ -14,10 +14,14 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
-use App\Http\Controllers\Admin\StoreController;  
+use App\Http\Controllers\Admin\StoreController;
+//use App\Http\Controllers\Admin\StoreController as AdminStoreController;
+
+ 
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
+
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
 
@@ -47,12 +51,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
     });
 });
-
-// Home (customer)
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-
 
 
 

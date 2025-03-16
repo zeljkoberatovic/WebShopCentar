@@ -12,9 +12,9 @@
           
           @yield('content')
 
-        <!-- Footer -->
+        <!-- Footer 
         @include('admin.layouts.footer')    
-        </div>
+        </div>-->
     </div>
 
    

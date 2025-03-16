@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Store;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
 use App\Services\Admin\StoreService;
 
 class StoreController extends Controller
@@ -23,6 +24,16 @@ class StoreController extends Controller
         $users = User::all();
         return view('admin.stores.create', compact('users'));
     }
+
+    public function index(Request $request)
+    {
+         
+     $stores = $this->storeService->getAllStores();
+    
+     return view('admin.stores.create', compact('$stores'));
+    
+    }
+
 
     public function store(Request $request)
     {
@@ -49,14 +60,6 @@ class StoreController extends Controller
         }
     }
 
-    public function index(Request $request)
-{
-     // Uzmi sve prodavnice
-     $stores = Store::all();
-
-     // Prosledi podatke o prodavnicama u view
-     return view('admin.stores.index', compact('stores'));
     
-}
 
 }

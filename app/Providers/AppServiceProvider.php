@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\View;
+use App\Models\Store;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
     
         Fortify::registerView(function () {
             return view('auth.register');
+        });
+        
+        View::composer('admin.stores.index', function ($view) {
+            $view->with('stores', Store::all());
         });
     }
 }
