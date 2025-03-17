@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('admin.stores.index', function ($view) {
             $view->with('stores', Store::all());
         });
+       
 
         View::composer('admin.stores.create', function ($view) {
             $view->with('users', User::all());

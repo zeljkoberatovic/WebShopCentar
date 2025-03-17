@@ -27,12 +27,12 @@ class StoreController extends Controller
 
     public function index(Request $request)
     {
-         
-     $stores = $this->storeService->getAllStores();
+        // Pozivamo metodu za filtriranje
+        $stores = $this->storeService->getFilteredStores($request);
     
-     return view('admin.stores.create', compact('stores'));
-    
+        return view('admin.stores.index', compact('stores'));
     }
+    
 
     public function show(Store $store)
 {
@@ -46,10 +46,31 @@ public function edit(Store $store)
     return view('admin.stores.edit', compact('store'));
 }
 
+public function update(Request $request, Store $store)
+    {
+        // Validacija podataka
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'location' => 'nullable|string|max:255',
+            'type' => 'required|in:physical,online',
+            'status' => 'required|in:active,inactive',
+            'visibility' => 'required|in:private,public,hidden',
+            'url' => 'nullable|url',
+            'description' => 'nullable|string',
+        ]);
+
+        // Ažuriranje podataka u bazi
+        $store->update($validatedData);
+
+        // Redirektovanje nazad sa porukom o uspehu
+        return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspešno ažurirana.');
+    }
+
+
 public function destroy(Store $store)
     {
         $store->delete();
-        return redirect()->route('admin.stores.index')->with('success', 'Prodavnica je uspjesno obrisana!');
+        return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspjesno obrisana!');
     }
 
 

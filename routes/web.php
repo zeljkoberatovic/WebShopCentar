@@ -44,6 +44,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/stores/{store}', [StoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
         Route::get('/stores/{store}/edit', [StoreController::class, 'edit'])->name('stores.edit');
         Route::delete('/stores/{store}', [StoreController::class, 'destroy'])->name('stores.destroy');
+        Route::put('/stores/{store}', [StoreController::class, 'update'])->name('stores.update');
+
 
 
 

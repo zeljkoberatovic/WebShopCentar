@@ -303,61 +303,62 @@
 
 
         <!-- Lista Korisnika - Pretraga -->
-<div class="col-lg-12">
-  <div class="card">
-      <div class="card-header border-0 d-flex align-items-center justify-content-between">
-          <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
+            <div class="col-lg-12">
+              <div class="card">
+                  <div class="card-header border-0 d-flex align-items-center justify-content-between">
+                      <h3 class="card-title m-0" style="font-size: 1.3rem;">Lista korisnika</h3>
 
-          <!-- Forma za pretragu korisnika -->
-          <form id="search-form" method="GET" action="{{ route('admin.search') }}">
-              <div class="input-group">
-                  <input type="text" id="search-name" name="name" class="form-control" placeholder="Ime korisnika" value="{{ request('name') }}">
-                  <input type="text" id="search-email" name="email" class="form-control" placeholder="Email" value="{{ request('email') }}">
-                  <button type="submit" class="btn btn-primary">Filtriraj</button>
+                      <!-- Forma za pretragu korisnika -->
+                      <form id="search-form" method="GET" action="{{ route('admin.search') }}">
+                          <div class="input-group">
+                              <input type="text" id="search-name" name="name" class="form-control" placeholder="Ime korisnika" value="{{ request('name') }}">
+                              <input type="text" id="search-email" name="email" class="form-control" placeholder="Email" value="{{ request('email') }}">
+                              <button type="submit" class="btn btn-primary">Filtriraj</button>
+                          </div>
+                      </form>
+                  </div>
+
+                  <div class="card-body">
+                      <!-- Ako nema korisnika, prikaži poruku -->
+                      @if ($noUsersFound)
+                          <div class="alert alert-warning">
+                              Nema korisnika koji odgovaraju pretrazi.
+                              <a href="javascript:void(0);" onclick="window.history.back();">Vrati se nazad</a>
+                          </div>
+                      @endif
+
+                      <!-- Tabela korisnika -->
+                      <div class="table-responsive">
+                          <table class="table table-striped table-hover align-middle">
+                              <thead class="table-light">
+                                  <tr>
+                                      <th>#</th>
+                                      <th>Ime</th>
+                                      <th>Email</th>
+                                      <th>Role</th>
+                                      <th>Datum registracije</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  @foreach ($users as $user)
+                                      <tr>
+                                          <td>{{ $loop->iteration }}</td>
+                                          <td><a href="{{ route('admin.users.show', $user->id) }}">{{ $user->name }}</a></td>
+                                          <td>{{ $user->email }}</td>
+                                          <td>{{ ucfirst($user->role) }}</td>
+                                          <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
+                                      </tr>
+                                  @endforeach
+                              </tbody>
+                          </table>
+                      </div>
+
+                      <!-- Paginate -->
+                      <x-pagination :paginator="$users" />
+                      
+                  </div>
               </div>
-          </form>
-      </div>
-
-      <div class="card-body">
-          <!-- Ako nema korisnika, prikaži poruku -->
-          @if ($noUsersFound)
-              <div class="alert alert-warning">
-                  Nema korisnika koji odgovaraju pretrazi.
-                  <a href="javascript:void(0);" onclick="window.history.back();">Vrati se nazad</a>
-              </div>
-          @endif
-
-          <!-- Tabela korisnika -->
-          <div class="table-responsive">
-              <table class="table table-striped table-hover align-middle">
-                  <thead class="table-light">
-                      <tr>
-                          <th>#</th>
-                          <th>Ime</th>
-                          <th>Email</th>
-                          <th>Role</th>
-                          <th>Datum registracije</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      @foreach ($users as $user)
-                          <tr>
-                              <td>{{ $loop->iteration }}</td>
-                              <td><a href="{{ route('admin.users.show', $user->id) }}">{{ $user->name }}</a></td>
-                              <td>{{ $user->email }}</td>
-                              <td>{{ ucfirst($user->role) }}</td>
-                              <td class="text-nowrap text-secondary">{{ $user->created_at->format('d M Y') }}</td>
-                          </tr>
-                      @endforeach
-                  </tbody>
-              </table>
-          </div>
-
-          <!-- Paginate -->
-          <x-pagination :paginator="$users" />
-      </div>
-  </div>
-</div>
+            </div>
 
 
         
@@ -442,6 +443,8 @@
             }
         });
     </script>
+
+    
     
 
 

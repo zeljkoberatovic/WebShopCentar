@@ -28,11 +28,24 @@ class StoreService
         return Store::create($data);
     }
 
-    public function getAllStores()
-    {
+    public function getFilteredStores(Request $request)
+{
+    $query = Store::query();
 
-        return Store::all();
-
+    // Filtriranje po imenu prodavnice, ako postoji parametar 'name'
+    if ($request->has('name') && $request->name != '') {
+        $query->where('name', 'like', '%' . $request->name . '%');
     }
+
+    // Filtriranje po lokaciji, ako postoji parametar 'location'
+    if ($request->has('location') && $request->location != '') {
+        $query->where('location', 'like', '%' . $request->location . '%');
+    }
+
+    // Paginacija
+    return $query->paginate(10);  // Paginacija po 10 prodavnica po stranici
+}
+
+
 
 }
