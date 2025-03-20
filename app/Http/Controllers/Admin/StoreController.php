@@ -53,8 +53,8 @@ public function update(Request $request, Store $store)
             'name' => 'required|string|max:255',
             'location' => 'nullable|string|max:255',
             'type' => 'required|in:physical,online',
-            'status' => 'required|in:active,inactive',
-            'visibility' => 'required|in:private,public,hidden',
+            'status' => 'nullable|in:active,inactive',
+            'visibility' => 'nullable|in:private,public,hidden',
             'url' => 'nullable|url',
             'description' => 'nullable|string',
         ]);
@@ -63,7 +63,7 @@ public function update(Request $request, Store $store)
         $store->update($validatedData);
 
         // Redirektovanje nazad sa porukom o uspehu
-        return redirect()->route('admin.dashboard')->with('success', 'Prodavnica je uspešno ažurirana.');
+        return redirect()->route('admin.stores.show', $store->id)->with('success', 'Prodavnica je uspešno ažurirana.');
     }
 
 

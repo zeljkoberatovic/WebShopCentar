@@ -82,10 +82,10 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-success">Spasi promene</button>
+            <button type="submit" class="btn btn-success">Sacuvaj izmjene</button>
         </form>
 
         <!-- Back Button -->
-        <a href="{{ route('admin.stores.index') }}" class="btn btn-primary mt-3">Nazad na listu prodavnica</a>
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-primary mt-3">Nazad na listu prodavnica</a>
     </div>
 @endsection
