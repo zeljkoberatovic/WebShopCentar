@@ -29,22 +29,27 @@ class StoreService
     }
 
     public function getFilteredStores(Request $request)
-{
-    $query = Store::query();
-
-    // Filtriranje po imenu prodavnice, ako postoji parametar 'name'
-    if ($request->has('name') && $request->name != '') {
-        $query->where('name', 'like', '%' . $request->name . '%');
+    {
+        $query = Store::query();
+    
+        if ($request->filled('name')) {
+            $query->where('name', 'LIKE', '%' . $request->name . '%');
+        }
+    
+        if ($request->filled('location')) {
+            $query->where('location', 'LIKE', '%' . $request->location . '%');
+        }
+    
+        // Dodaj paginaciju
+        $stores = $query->paginate(10);
+    
+        // Provera koji SQL se izvršava
+        //dd($query->toSql(), $query->getBindings());
+    
+        return $stores;
     }
+    
 
-    // Filtriranje po lokaciji, ako postoji parametar 'location'
-    if ($request->has('location') && $request->location != '') {
-        $query->where('location', 'like', '%' . $request->location . '%');
-    }
-
-    // Paginacija
-    return $query->paginate(10);  // Paginacija po 10 prodavnica po stranici
-}
 
 
 
