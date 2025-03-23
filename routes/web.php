@@ -14,8 +14,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\TwoFactorAuthenticationController;
 
-use App\Http\Controllers\Admin\StoreController;
-//use App\Http\Controllers\Admin\StoreController as AdminStoreController;
+//use App\Http\Controllers\Admin\StoreController;
+use App\Http\Controllers\Admin\StoreController as AdminStoreController;
 
  
 
@@ -38,13 +38,13 @@ Route::middleware(['auth'])->group(function () {
        
         Route::get('/users/{id}', [AdminDashboardController::class, 'show'])->name('users.show'); // Detalji korisnika
 
-        Route::get('/stores', [StoreController::class, 'index'])->name('stores.index'); // Lista prodavnica
-        Route::get('/stores/create', [StoreController::class, 'create'])->name('stores.create'); // Forma za kreiranje
-        Route::post('/stores', [StoreController::class, 'store'])->name('stores.store'); // Čuvanje prodavnice
-        Route::get('/stores/{store}', [StoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
-        Route::get('/stores/{store}/edit', [StoreController::class, 'edit'])->name('stores.edit');
-        Route::delete('/stores/{store}', [StoreController::class, 'destroy'])->name('stores.destroy');
-        Route::put('/stores/{store}', [StoreController::class, 'update'])->name('stores.update');
+        Route::get('/stores', [AdminStoreController::class, 'index'])->name('stores.index'); // Lista prodavnica
+        Route::get('/stores/create', [AdminStoreController::class, 'create'])->name('stores.create'); // Forma za kreiranje
+        Route::post('/stores', [AdminStoreController::class, 'store'])->name('stores.store'); // Čuvanje prodavnice
+        Route::get('/stores/{store}', [AdminStoreController::class, 'show'])->name('stores.show'); // Detalji prodavnice
+        Route::get('/stores/{store}/edit', [AdminStoreController::class, 'edit'])->name('stores.edit');
+        Route::delete('/stores/{store}', [AdminStoreController::class, 'destroy'])->name('stores.destroy');
+        Route::put('/stores/{store}', [AdminStoreController::class, 'update'])->name('stores.update');
 
 
 
