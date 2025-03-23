@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         });
         
         View::composer('admin.stores.index', function ($view) {
-            $view->with('stores', Store::all());
+            $view->with('stores', Store::paginate(10));
         });
        
 

@@ -4,13 +4,17 @@
         <div class="card-header border-0 d-flex align-items-center justify-content-between">
             <h3 class="card-title m-0" style="font-size: 1.5rem;">Lista prodavnica</h3>
 
-            <form id="search-form" method="GET" action="{{ route('admin.stores.index') }}">
-                <div class="input-group">
-                    <input type="text" id="search-name" name="name" class="form-control" placeholder="Ime prodavnice" value="{{ request('name') }}">
-                    <input type="text" id="search-location" name="location" class="form-control" placeholder="Lokacija" value="{{ request('location') }}">
-                    <button type="submit" class="btn btn-primary">Filtriraj</button>
-                </div>
+            <form method="GET" action="{{ route('admin.stores.index') }}">
+                <input type="text" name="name" value="{{ request('name') }}" placeholder="Pretraga po imenu">
+                <input type="text" name="location" value="{{ request('location') }}" placeholder="Pretraga po lokaciji">
+                <select name="type">
+                    <option value="">-- Izaberi vrstu --</option>
+                    <option value="physical" {{ request('type') == 'physical' ? 'selected' : '' }}>Fizička prodavnica</option>
+                    <option value="online" {{ request('type') == 'online' ? 'selected' : '' }}>Online prodavnica</option>
+                </select>
+                <button type="submit">Pretraži</button>
             </form>
+             
             
         </div>
 
@@ -63,7 +67,8 @@
                 </table>
             </div>
  
-
+<!-- Paginate -->
+<x-pagination :paginator="$stores" />
         </div>
     </div>
 </div>

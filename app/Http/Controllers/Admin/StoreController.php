@@ -26,13 +26,13 @@ class StoreController extends Controller
     }
 
     public function index(Request $request)
-    {
-       
-        // Pozivamo metodu za filtriranje
-        $stores = $this->storeService->getFilteredStores($request);
+{
+    // Pozivamo metodu za filtriranje
+    $stores = $this->storeService->getFilteredStores($request);
 
-        return view('admin.stores.index', compact('stores'));
-    }
+    return view('admin.stores.index', compact('stores'));
+}
+
     
 
     public function show(Store $store)

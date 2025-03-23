@@ -28,6 +28,7 @@ class StoreService
         return Store::create($data);
     }
 
+   
     public function getFilteredStores(Request $request)
     {
         $query = Store::query();
@@ -40,17 +41,20 @@ class StoreService
             $query->where('location', 'LIKE', '%' . $request->location . '%');
         }
     
-        // Dodaj paginaciju
+        // Paginacija sa 10 rezultata po strani
         $stores = $query->paginate(10);
     
-        // Provera koji SQL se izvršava
-        //dd($query->toSql(), $query->getBindings());
+        // Očuvanje parametara pretrage u URL-u
+        $stores->appends($request->all());
     
         return $stores;
+    }
+    
+
     }
     
 
 
 
 
-}
+
