@@ -2,12 +2,15 @@
 @section('content')
 
 <div class="container">
-    <h1>User Dashboard</h1>
-    <p>
-        Dobrodošli na našu stranicu! Mi smo kompanija posvećena pružanju najboljih rešenja 
-        za kreiranje i iznajmljivanje web prodavnica. Naš cilj je omogućiti vašem poslovanju 
-        online prisustvo koje zaslužuje.
-    </p>
-</div>
+    <div class="container mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4">Dobrodošli, {{ $user->name }}</h2>
+    
+        <div class="bg-white rounded-xl shadow p-6">
+            <p><strong>Ime:</strong> {{ $user->name }}</p>
+            <p><strong>Email:</strong> {{ $user->email }}</p>
+            <p><strong>Registrovan:</strong> {{ $user->created_at->format('d.m.Y.') }}</p>
+            {{-- Dodaj još ako imaš custom polja --}}
+        </div>
+    </div>
 
 @endsection
