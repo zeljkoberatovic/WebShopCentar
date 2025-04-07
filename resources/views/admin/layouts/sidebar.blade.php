@@ -37,10 +37,13 @@
           <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
             <span class="avatar avatar-sm" style="background-image: url(./static/avatars/admin.jpeg)"></span>
             <div class="d-none d-xl-block ps-2">
-              <div>Paweł Kuna</div>
-              <div class="mt-1 small text-secondary">UI Designer</div>
+              <div></div>
+              <div class="mt-1 small text-secondary"></div>
             </div>
           </a>
+
+
+          
           <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
             <a href="#" class="dropdown-item">Status</a>
             <a href="./profile.html" class="dropdown-item">Profile</a>
@@ -121,7 +124,7 @@
                         </svg>
                     </span>
                     <span class="nav-link-title">
-                        Forms
+                        Lista prodavnica
                     </span>
                 </a>
             </li>
